@@ -13,26 +13,15 @@ Route::get('/', function () {
 });
 
 
-Route::get('/registration/form',[AuthController::class,'loadRegisterForm']);
-Route::post('/register/user',[AuthController::class,'registerUser'])->name('registerUser');
-
-Route::get('/login/form',[AuthController::class,'loadLoginPage']);
-Route::post('/login/user',[AuthController::class,'loginUser'])->name('loginUser');
-
-Route::get('/home',[AuthController::class,'loadHomePage']);
-
-Route::get('/logout',[AuthController::class,'LogoutUser']);
-
-Route::get('/forgot/password',[AuthController::class,'forgotPassword']);
-Route::post('/forgot',[AuthController::class,'forgot'])->name('forgot');
-
-
 Route::middleware(['auth', 'verified'])->group(function () {
   // сторінка на яку переходить зареєстрований та авторізований(залогінений) користувач
   Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
 
-});
 
+  Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+
+  Route::get('devices', [UserController::class, 'devices'])->name('devices');
+});
 
 
 Route::middleware('guest')->group(function () {
@@ -54,9 +43,6 @@ Route::middleware('guest')->group(function () {
   })->name('password.reset');
 
   Route::post('reset-password', [UserController::class,'resetPasswordUpdate'])->name('password.update');
-
-//   зразок - потім прибрати
-  Route::get('dashboard_isx', [UserController::class, 'dashboard'])->name('dashboard_isx');
 
 });
 

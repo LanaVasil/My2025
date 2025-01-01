@@ -1,6 +1,14 @@
 :root {
     --title-color: #012970;
+    --text-color: #444444;
+    --bg-color: #f6f9ff;
+
     --accent-color: #ffa500;
+
+    // font-family: "Open Sans", sans-serif;
+    // background: #f6f9ff;
+    // color: #444444;
+
     --bs-warning: var(--accent-color) !important;
     // --bs-primary: #ffd333 !important;
 
@@ -9,9 +17,10 @@
 
     --bg-color: #eef4fa;
 
-    --font-family-title: "Poppins", sans serif;
-    --font-family-base: "Arsenal", sans serif;
-    --font-family-accent: "MazzardM", sans serif;
+    --font-title: "Poppins", sans serif;
+    --font-base: "OpenSans", sans serif;
+    // --font-base: "Arsenal", sans serif;
+    --font-accent: "MazzardM", sans serif;
 
     // --bs-card-spacer-x: 0.5rem !important;
     // // --bs-card-spacer-y: 0.5rem !important;

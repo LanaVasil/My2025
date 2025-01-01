@@ -1,4 +1,3 @@
-{{-- <footer class="py-3 mt-4 border-top text-center"> --}}
-<footer class="footer py-3 mt-4 border-top text-center">
-    {{ config('app.name') }} © {{ date('Y') }} {{ $const_share_AppServiceProvider }}
+<footer id="footer" class="footer">
+    {{ config('app.name') }} :: 2024-{{ date('Y') }}рр &copy; Авторське право <strong><span>{{ $const_share_AppServiceProvider }}</span></strong>
 </footer>

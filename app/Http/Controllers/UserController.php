@@ -14,6 +14,10 @@ use Illuminate\Auth\Events\PasswordReset;
 
 class UserController extends Controller
 {
+  public function devices()
+  {
+    return view('devices.devices');
+  }
   public function create()
   {
     return view('user.create');

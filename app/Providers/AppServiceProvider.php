@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
       Paginator::defaultView('vendor.pagination.bootstrap-5');
 
       // виводити на усіх сторінках як зміну в footer.blade.php
-      View::share('const_share_AppServiceProvider', 'розробка Васильєвої С.Ю.');
+      View::share('const_share_AppServiceProvider', 'Васильєва Світлана');
 
       // виводити на розділ, наприклад - user*
       View::composer('user*', function($view){
