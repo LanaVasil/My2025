@@ -17,8 +17,7 @@
 
 
     </div><!-- End Page Title --> --}}
-
-        <div class="row p-10 mb-1">
+    <div class="row">
       <div class="col-12">
         <nav class="breadcrumbs">
           <ul>
