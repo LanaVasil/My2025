@@ -18,6 +18,12 @@
 </head>
 
 <body>
+
+<div id="progress">
+    {{-- <span id="progress-value">&#x1F815;</span> --}}
+    <span id="progress-value">&#xF286;</span>
+</div>
+
 <div class="wrapper">
   {{-- <header id="header" class="header fixed-top d-flex align-items-center"> --}}
   {{-- <header id="header" class="header d-flex align-items-center">

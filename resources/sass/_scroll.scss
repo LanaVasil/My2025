@@ -1,0 +1,26 @@
+// Scroll-To-Top-With-Scroll-Progress
+#progress {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    height: 60px;
+    width: 60px;
+    display: none;
+    place-items: center;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+#progress-value {
+    display: block;
+    height: calc(100% - 6px);
+    width: calc(100% - 6px);
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+
+    font-family: bootstrap-icons !important;
+    font-size: 1.3rem;
+    color: var(--accent-color);
+}
