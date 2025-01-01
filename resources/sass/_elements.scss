@@ -1,0 +1,148 @@
+// z-index - перелік
+// #progress / z-index: 1000;
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    min-width: 320px;
+    font-size: 16px;
+    font-family: var(--font-family-base);
+    line-height: 26px;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--bg-color);
+    color: var(--bs-dark);
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.main.main {
+    flex: 1 1 auto;
+}
+
+// #main {
+//     /* margin-top: 60px; */
+//     /* padding: 20px 30px; */
+//     transition: all 0.3s;
+// }
+.card-title {
+    font-family: var(--font-family-title);
+    font-weight: 600;
+    color: var(--title-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+// червона зірочка - позначка що поле обов'язкове до заповнення
+.asterisk:after {
+    content: "*";
+    color: red;
+    margin-left: 2px;
+}
+
+/* -- Перевизначення загальних елементів -- */
+.btn,
+.dropdown-menu,
+.form-control,
+.form-select,
+.form-check-input[type="checkbox"] {
+    border-radius: 0;
+}
+
+.form-control:focus,
+.form-select:focus,
+.input-group:focus,
+.control-input:focus,
+.form-check-input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.5px rgba(255, 127, 80, 0.6);
+}
+
+.form-check-input:checked {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+a {
+    color: inherit; //прибираємо синій колір
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+a:hover {
+    text-decoration: underline dotted;
+}
+
+.dropdown-toggle::after {
+    content: "\F282";
+    font-family: bootstrap-icons !important;
+    font-weight: 900;
+    font-size: 0.9rem;
+    // розташувала стрелку посередині іконки
+    vertical-align: -0.125em;
+    border: 0;
+}
+
+// display: inline-block;
+//     font-family: bootstrap-icons !important;
+//     font-style: normal;
+//     font-weight: normal !important;
+//     font-variant: normal;
+//     text-transform: none;
+//     line-height: 1;
+//     vertical-align: -.125em;
+//     -webkit-font-smoothing: antialiased;
+
+/* ==================/ General==================== */
+
+.form-label {
+    margin-bottom: 0;
+}
+.form-control::placeholder {
+    color: var(--bs-gray-500);
+}
+
+// .navbar-side ul .bi-navbar,
+// // .dropdown-toggle .bi-navbar::before,
+// .bi-navbar {
+//     font-size: 1.5rem;
+// }
+
+.table > :not(caption) > * > * {
+    padding: 0.25rem 0.5rem;
+}
+
+.btn {
+    border-radius: 0;
+    font-family: var(--font-family-title);
+    // color: var(--title-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+// отступи на форме для chk
+// .card-body {
+//     padding: 0.5rem 0.5rem;
+// }
+
+.card-body {
+    padding: 0 1.2em 1.2em 1.2em;
+}
+
+.card-link {
+    font-weight: 300;
+    // font-size: 0.9em;
+    font-family: var(--font-family-title);
+    font-style: italic;
+    color: var(--accent-color);
+}

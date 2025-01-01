@@ -1,0 +1,92 @@
+@media (min-width: 320px) {
+    #main,
+    #footer {
+        /* margin-left: 300px; */
+        margin: 0;
+    }
+}
+
+/* Ctrl + Shift + M - відкрити вікно Responsive - для перевірки*/
+@media all and (min-width: 992px) {
+    .logo {
+        width: 280px;
+    }
+
+    .dropdown:hover > .dropdown-toggle::after {
+        content: "\F286";
+    }
+
+    /* при наведені на пункт меню розкриваєтся підменю */
+    .top-navbar .dropdown-menu {
+        display: block;
+        transform: translateY(10px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+        transition-delay: 0.2s;
+    }
+
+    .top-navbar .dropdown:hover > .dropdown-menu {
+        display: block;
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* при наведені на пункт меню e підменю закріплено праворуч */
+    .navbar-side .dropdown-menu-end {
+        right: 0;
+        left: auto;
+    }
+
+    /* меню / каталог займає усю ширину контейнера */
+    .has-megamenu {
+        position: static;
+    }
+
+    /* налаштовуємо щоб при сліке розкрите меню не стрибало */
+    .dropdown-menu.megamenu {
+        top: auto;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .dropdown-menu.dropdown-menu-end {
+        top: auto;
+        margin-top: 0;
+    }
+}
+
+@media all and (max-width: 991.98px) {
+    .dropdown-toggle.show::after {
+        content: "\F286";
+    }
+
+    /* .navbar-phone {
+		display: none;
+	} */
+
+    .nav-item {
+        /* відокремлення пунктів меню підкресленням знизу */
+        border-bottom: 1px solid var(--bs-gray-500);
+    }
+    p {
+        margin-bottom: 0.25rem;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .top-line {
+        font-size: 0.75rem;
+        line-height: 0.9rem;
+    }
+    .navbar {
+        padding: 0;
+    }
+
+    // Беру <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+    // прибираю top-0 start-100
+    .btn .badge {
+        top: 1em !important;
+    }
+}

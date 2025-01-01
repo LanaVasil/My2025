@@ -1,0 +1,32 @@
+.sidebar {
+    // background-color: var(--bs-light);
+    // padding: 0.5rem 1rem;
+    // margin-bottom: 1rem;
+}
+
+.filter-block:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.filter-block .form-check {
+    margin-bottom: 0.5rem;
+}
+
+.form-check-input[type="checkbox"] {
+    border-radius: 0;
+    border-color: var(--bs-gray-500);
+}
+
+.form-check-input:focus {
+    border-color: var(--bs-gray-500);
+    box-shadow: none;
+}
+
+.form-check-input:checked {
+    background-color: var(--bs-gray-500);
+    // border-color: var(--bs-gray-500);
+}
+
+.filter-block .badge {
+    color: blue;
+}

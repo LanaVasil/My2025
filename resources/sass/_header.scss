@@ -1,0 +1,28 @@
+/* ==================Header==================== */
+.logo {
+    line-height: 1;
+    text-decoration: none;
+}
+
+.logo img {
+    max-height: 26px;
+    margin-right: 6px;
+}
+
+.logo span {
+    font-family: var(--font-family-title);
+    font-size: 1.6em;
+    font-weight: 500;
+
+    color: var(--accent-color);
+}
+
+.card-entry {
+    border-radius: 0.5em;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+}
+
+// .card-entry .card-body {
+//     margin: 0 1.2em;
+// }
+/* ==================/ Header==================== */

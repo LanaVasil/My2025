@@ -1,0 +1,36 @@
+/* ============================= Category Page ============================ */
+.breadcrumbs {
+    margin-top: 0.5rem;
+}
+
+.breadcrumbs ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: var(--bs-gray-600);
+    transition: all 0.5s;
+    margin-right: 0.5rem;
+}
+
+.breadcrumbs a:hover {
+    color: var(--accent-color);
+}
+
+.breadcrumbs a::after {
+    content: "\F280";
+    font-family: bootstrap-icons !important;
+    font-size: 0.6rem;
+    padding-left: 0.5rem;
+    color: var(--bs-gray-600);
+}
+
+// .sidebar {
+//     background-color: #fff;
+//     padding: 0.5rem 1rem;
+//     margin-bottom: 1rem;
+// }

@@ -1,0 +1,220 @@
+// @font-face {
+//     font-family: "Arsenal";
+//     src: url("../fonts/Arsenal-Italic.woff2") format("woff2"),
+//         url("../fonts/Arsenal-Italic.woff") format("woff");
+//     font-weight: 400;
+//     font-style: italic;
+// }
+@font-face {
+    font-family: "Arsenal";
+    src: url("../fonts/Arsenal-Regular.woff2") format("woff2"),
+        url("../fonts/Arsenal-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+// @font-face {
+//   font-family: "MazzardM";
+//   src: url("../fonts/MazzardM-Bold.woff2") format("woff2"),
+//       url("../fonts/MazzardM-Bold.woff") format("woff");
+//   font-weight: 700;
+//   font-style: normal;
+// }
+@font-face {
+    font-family: "MazzardM";
+    src: url("../fonts/MazzardM-Medium.woff2") format("woff2"),
+        url("../fonts/MazzardM-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: "MazzardM";
+    src: url("../fonts/MazzardM-Regular.woff2") format("woff2"),
+        url("../fonts/MazzardM-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "MazzardM";
+    src: url("../fonts/MazzardM-Light.woff2") format("woff2"),
+        url("../fonts/MazzardM-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "MazzardM";
+    src: url("../fonts/MazzardM-LightItalic.woff2") format("woff2"),
+        url("../fonts/MazzardM-LightItalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+}
+// @font-face {
+//     font-family: "KyivTypeIcons";
+//     src: url("../fonts/KyivTypeIcons-Background.woff2") format("woff2"),
+//         url("../fonts/KyivTypeIcons-Background.woff") format("woff");
+//     font-weight: 700;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: "KyivTypeIcons";
+//     src: url("../fonts/KyivTypeIcons-Regular.woff2") format("woff2"),
+//         url("../fonts/KyivTypeIcons-Regular.woff") format("woff");
+//     font-weight: 400;
+//     font-style: normal;
+// }
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Bold.woff2") format("woff2"),
+        url("../fonts/Poppins-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-SemiBold.woff2") format("woff2"),
+        url("../fonts/Poppins-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Medium.woff2") format("woff2"),
+        url("../fonts/Poppins-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Regular.woff2") format("woff2"),
+        url("../fonts/Poppins-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Light.woff2") format("woff2"),
+        url("../fonts/Poppins-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-LightItalic.woff2") format("woff2"),
+        url("../fonts/Poppins-LightItalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+}
+// @font-face {
+//     font-family: "Poppins";
+//     src: url("../fonts/Poppins-Thin.woff2") format("woff2"),
+//         url("../fonts/Poppins-Thin.woff") format("woff");
+//     font-weight: 100;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: "MazzardSoftM";
+//     src: url("../fonts/MazzardSoftM-LightItalic.woff2") format("woff2"),
+//         url("../fonts/MazzardSoftM-LightItalic.ttf") format("ttf");
+//     font-weight: 300;
+//     font-style: italic;
+// }
+
+// @font-face {
+//     font-family: "BebasNeuePro";
+//     src: url("../fonts/BebasNeuePro-Light.woff2") format("woff2"),
+//         url("../fonts/BebasNeuePro-Light.ttf") format("ttf");
+//     font-weight: 300;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: "BebasNeuePro";
+//     src: url("../fonts/BebasNeuePro-Regular.woff2") format("woff2"),
+//         url("../fonts/BebasNeuePro-Regular.ttf") format("ttf");
+//     font-weight: 400;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: "BebasNeuePro";
+//     src: url("../fonts/BebasNeuePro-Middle.woff2") format("woff2"),
+//         url("../fonts/BebasNeuePro-Middle.ttf") format("ttf");
+//     font-weight: 500;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: "BebasNeuePro";
+//     src: url("../fonts/BebasNeueProItalic-Middle.woff2") format("woff2"),
+//         url("../fonts/BebasNeueProItalic-Middle.woff") format("woff");
+//     font-weight: 500;
+//     font-style: italic;
+// }
+
+// @font-face {
+//     font-family: "BebasNeuePro";
+//     src: url("../fonts/BebasNeuePro-Bold.woff2") format("woff2"),
+//         url("../fonts/BebasNeuePro-Bold.ttf") format("ttf");
+//     font-weight: 700;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: "BebasNeueProExp";
+//     src: url("../fonts/BebasNeueProExp-Regular.woff2") format("woff2"),
+//         url("../fonts/BebasNeueProExp-Regular.ttf") format("ttf");
+//     font-weight: 400;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: "BebasNeueProExp";
+//     src: url("../fonts/BebasNeueProExp-Medium.woff2") format("woff2"),
+//         url("../fonts/BebasNeueProExp-Medium.ttf") format("ttf");
+//     font-weight: 500;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: "MagnoliaScript";
+//     src: url("../fonts/MagnoliaScript-Regular.woff2") format("woff2"),
+//         url("../fonts/MagnoliaScript-Regular.woff") format("woff");
+//     font-weight: 400;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: "Miama";
+//     src: url("../fonts/Miama-Regular.woff2") format("woff2"),
+//         url("../fonts/Miama-Regular.woff") format("woff");
+//     font-weight: 400;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: "KyivTypeSans";
+//     src: url("../fonts/KyivTypeSans-Regular.woff2") format("woff2"),
+//         url("../fonts/KyivTypeSans-Regular.woff") format("woff");
+//     font-weight: 400;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: "KyivTypeSans";
+//     src: url("../fonts/KyivTypeSans-Bold.woff2") format("woff2"),
+//         url("../fonts/KyivTypeSans-Bold.woff") format("woff");
+//     font-weight: 700;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: "Laqonic4F";
+//     src: url("../fonts/Laqonic4FUnicase-Regular.woff2") format("woff2"),
+//         url("../fonts/Laqonic4FUnicase-Regular.woff") format("woff");
+//     font-weight: 400;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: "Laqonic4F";
+//     src: url("../fonts/Laqonic4FUnicase-Bold.woff2") format("woff2"),
+//         url("../fonts/Laqonic4FUnicase-Bold.woff") format("woff");
+//     font-weight: 700;
+//     font-style: normal;
+// }

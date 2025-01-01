@@ -1,0 +1,21 @@
+@use "sass:math";
+
+// Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// Added: Bootstrap icons
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+@import "variables";
+
+@import "fonts";
+
+@import "elements";
+
+@import "header";
+//@import "filters";
+//@import "content";
+
+@import "media";
+
+@import "_niceadmin";
