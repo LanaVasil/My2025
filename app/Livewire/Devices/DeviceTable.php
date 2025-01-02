@@ -182,7 +182,7 @@ public function setSort($column)  {
     public function render()
     {
 
-// Debugbar::info( [$this->getDevices()]);
+ Debugbar::info( [$this->getDevices()]);
       return
       view('livewire.devices.device-table',[
         'rows'=>$this->getDevices(),
@@ -190,7 +190,7 @@ public function setSort($column)  {
         'brands'=>$this->getBrands() ])
       ->layoutData([
         'metaAutor'=>'Vasilyeva Svitlana',
-        'titlePage'=>$this->titlePage]);
-    //   ->layout('components.layouts.main');
+        'titlePage'=>$this->titlePage])
+      ->layout('components.layouts.app');
     }
 }

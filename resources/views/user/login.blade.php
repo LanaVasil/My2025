@@ -13,7 +13,7 @@
         </div>
 
         <div class="col-12">
-           <x-button class="w-100" label="{{ __('До роботи') }}"/>
+           <x-button class="btn-login w-100" label="{{ __('До роботи') }}"/>
         </div>
 
     </x-forms.form>

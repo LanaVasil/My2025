@@ -13,7 +13,7 @@
         <x-input-with-tag name="password_confirmation" type="password" placeholder="Пароль ще раз" bi="bi bi-key-fill"/>
 
         <div class="col-12">
-           <x-button class="w-100" label="{{ __('Зберегти') }}"/>
+           <x-button class="btn-login w-100" label="{{ __('Зберегти') }}"/>
         </div>
 
         <div class="col-12 mt-3 mb-3 d-flex justify-content-between">

@@ -18,7 +18,7 @@
     <x-forms.form action="{{ route('verification.send') }}" method="POST">
 
         <div class="col-12">
-           <x-button class="w-100" label="{{ __('Повторити відправлення') }}"/>
+           <x-button class="btn-login w-100" label="{{ __('Повторити відправлення') }}"/>
         </div>
 
     </x-forms.form>

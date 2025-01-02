@@ -118,7 +118,13 @@ a {
     padding: 0.25rem 0.5rem;
 }
 
-.btn {
+.btn-sort:focus {
+    // в таблиці при сортуванні колонки утворюєтся рамка, хотіла прибрати не вийшло - поки
+    box-shadow: none;
+}
+
+.btn-login {
+    // це кнопка на формі Логіна/Реєстрації по ширині займає усю форму
     border-radius: 0;
     font-family: var(--font-title);
     // color: var(--title-color);

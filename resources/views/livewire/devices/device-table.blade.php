@@ -1,9 +1,3 @@
-@extends('components.layouts.main')
-
-@section('title', 'Довідник пристроїв')
-
-@section('content')
-
 <div class="main__container">
     {{-- Breadcrumbs / хлібні крихти, назва сторинки  --}}
     @include('includes.breadcrumbs')
@@ -99,9 +93,6 @@
             </div>
           @endif
         </div> --}}
-        <!-- Флеш повідомлення (показати і після цього видалили з сесії). Відображення повідомлення про вдалу Add / Edit / Delete -->
-        @include('includes.flash')
-
       <div class="row g-3 align-items-center mb-2">
 
           {{-- Btn delete group + spinner-grow  --}}
@@ -228,4 +219,4 @@
   </div>
 
 </div>
-@endsection
+
