@@ -8,12 +8,16 @@ use Illuminate\Http\Request;
 use App\Livewire\Devices\DeviceTable;
 use App\Livewire\Devices\DeviceAdd;
 use App\Livewire\Devices\DeviceEdit;
+
+use App\Livewire\BrandComponent;
 // use Illuminate\Support\Facades\Password;
 
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 
 
 
@@ -28,8 +32,24 @@ Route::middleware(['auth', 'verified'])->group(function () {
   Route::get('/devices/edit', DeviceEdit::class)->name('devices.edit');
 
   // Route::get('devices', [UserController::class, 'devices'])->name('devices');
+
+
+//   Route::get('/dashboard', function(): Factory|View {
+//     return view('dashboard');
+//   })->middleware('rolemanager:customer')->name('dashboard');
+//   Route::get('/admin/dashboard', function(): Factory|View {
+//     return view('admin');
+//   })->middleware('rolemanager:admin')->name('admin');
 });
 
+
+// Route::middleware(['auth', 'verified','rolemanager:admin'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
+//     Route::get('/admin/dashboard', AdminOverview::class)->name('admin.dashboard');
+    Route::get('/admin/brand', BrandComponent::class)->name('admin.brand');
+//     Route::get('/admin/add-product', AddProductComponent::class)->name('admin.add-product');
+//     Route::get('/admin/orders', OrderManagementComponent::class)->name('admin.orders');
+});
 
 Route::middleware('guest')->group(function () {
   Route::get('/register', [UserController::class, 'create'])->name('register');

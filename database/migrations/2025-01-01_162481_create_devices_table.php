@@ -19,7 +19,9 @@ return new class extends Migration
         $table->softDeletes();
         $table->string('name')->unique()->nullable();
         $table->string('note')->nullable();
-        $table->boolean('status')->default(true);
+        $table->tinyInteger('status')->default(1);
+        // $table->enum('status',['actual', 'unactual', 'noservice'])->default('active');
+        $table->string('img')->default(true);
         $table->foreignIdFor(Brand::class)
           ->nullable()
           ->constrained()

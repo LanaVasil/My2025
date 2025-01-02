@@ -182,7 +182,7 @@ public function setSort($column)  {
     public function render()
     {
 
- Debugbar::info( [$this->getDevices()]);
+//  Debugbar::info( [$this->getDevices()]);
       return
       view('livewire.devices.device-table',[
         'rows'=>$this->getDevices(),
