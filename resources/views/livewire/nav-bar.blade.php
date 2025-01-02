@@ -62,15 +62,24 @@
                 <!-- end col-3 -->
 
                 <div class="col-lg-3 col-6">
-                  <h6 class="title">Декоративные замки</h6>
+                  <h6 class="title">{{ __('Комп\'ютери') }} </h6>
                   <ul class="list-unstyled">
-                    <li><a href="#">Врезные замки</a></li>
-                    <li><a href="#">Замки для квартиры</a></li>
-                    <li><a href="#">Замки для дома</a></li>
-                    <li><a href="#">Замки для отелей</a></li>
-                    <li><a href="#">Замки для офиса</a></li>
-                    <li><a href="#">Замки для шкафчиков</a></li>
-                    <li><a href="#">Замки для шкафчиков</a></li>
+                    <li>
+                        <a wire:navigate href="{{ route('devices') }}">
+                            {{ __('Довідник пристроїв') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a wire:navigate href="{{ route('devices') }}">
+                            {{ __('Види пристроїв') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a wire:navigate href="{{ route('devices') }}">
+                            {{ __('Довідник брендів') }}
+                        </a>
+                    </li>
+
                   </ul>
                 </div>
                 <!-- end col-3 -->

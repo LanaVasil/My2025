@@ -22,10 +22,8 @@
         <nav class="breadcrumbs">
           <ul>
             <li><a href="{{ route('home') }}"><i class="bi bi-house-door"></i></a></li>
-            <li><a href="#">Пристрої</a></li>
-
-            <li><h4>jhkjh</h4></li>
-            <li><h4>{{ active_link(['devices*']) }}</h4></li>
+            <li><a href="#">Комп'ютери</a></li>
+            <li><h4>Довідник пристроїв</h4></li>
           </ul>
         </nav>
       </div>

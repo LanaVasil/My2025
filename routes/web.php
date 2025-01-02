@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
+use App\Livewire\Devices\DeviceTable;
+use App\Livewire\Devices\DeviceAdd;
+use App\Livewire\Devices\DeviceEdit;
 // use Illuminate\Support\Facades\Password;
 
 
@@ -17,8 +20,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
 //   Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
   Route::get('home', [UserController::class, 'home'])->name('home');
 
+//   Route::get('/devices', DeviceTable::class)->name('devices');
+//   Route::get('/devices/add', DeviceAdd::class)->name('devices.add');
+//   Route::get('/devices/edit', DeviceEdit::class)->name('devices.edit');
 
-  Route::get('devices', [UserController::class, 'devices'])->name('devices');
+   Route::get('devices', [UserController::class, 'devices'])->name('devices');
 });
 
 

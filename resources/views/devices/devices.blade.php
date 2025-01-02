@@ -11,6 +11,16 @@
     <!-- Флеш повідомлення (показати і після цього видалили з сесії). Відображення повідомлення про вдалу Add / Edit / Delete -->
     @include('includes.flash')
 
+  <div class="row">
+    {{-- Left - Sidebar Filters --}}
+    <div class="col-lg-2 col-md-3">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic nihil quod minima quibusdam tenetur ipsa iste, voluptatum officia qui, ea accusantium debitis fuga consequatur, natus esse eius! Consectetur, neque sed.
+Architecto earum maxime atque commodi debitis? Voluptates, nulla quis necessitatibus sequi expedita id aperiam aliquam omnis optio fugiat cumque doloremque veritatis dolores ipsam provident quasi atque quisquam quam vel laudantium.
+Quo reiciendis necess
+    </div>
+
+    {{-- Right - Tables --}}
+    <div class="col-lg-10 col-md-9">
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic nihil quod minima quibusdam tenetur ipsa iste, voluptatum officia qui, ea accusantium debitis fuga consequatur, natus esse eius! Consectetur, neque sed.
 Architecto earum maxime atque commodi debitis? Voluptates, nulla quis necessitatibus sequi expedita id aperiam aliquam omnis optio fugiat cumque doloremque veritatis dolores ipsam provident quasi atque quisquam quam vel laudantium.
 Quo reiciendis necessitatibus, maiores voluptates illum velit rem labore obcaecati blanditiis quae delectus esse sunt in ducimus quaerat aliquid ullam voluptas non ut asperiores facilis? Distinctio consequatur maiores quis quo!
@@ -21,6 +31,9 @@ Porro explicabo accusamus ab temporibus nobis maiores vel veniam perspiciatis ex
 Rerum, impedit nulla. Laborum ea alias earum similique ipsum, illum ullam quas facere quod, recusandae quidem accusantium autem. Nesciunt laudantium sint, rerum quidem ea assumenda nostrum omnis laborum facilis fuga!
 At dicta, iste id ipsa laboriosam porro odio! Labore esse deleniti excepturi tempora quidem, quo quas nulla delectus totam qui laudantium facilis, dolorem omnis mollitia exercitationem adipisci cum odit consequuntur!
 Doloribus corporis tempore expedita, quidem fuga deserunt est eum, dolorum provident laboriosam nostrum dolor soluta recusandae possimus alias quam temporibus? Unde necessitatibus molestiae saepe reprehenderit nihil adipisci mollitia dolor incidunt?
+
+    </div>
+  </div>
 
 </div>
 @endsection

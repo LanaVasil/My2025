@@ -204,20 +204,27 @@
 //     font-style: normal;
 // }
 
-// @font-face {
-//     font-family: "KyivTypeSans";
-//     src: url("../fonts/KyivTypeSans-Regular.woff2") format("woff2"),
-//         url("../fonts/KyivTypeSans-Regular.woff") format("woff");
-//     font-weight: 400;
-//     font-style: normal;
-// }
-// @font-face {
-//     font-family: "KyivTypeSans";
-//     src: url("../fonts/KyivTypeSans-Bold.woff2") format("woff2"),
-//         url("../fonts/KyivTypeSans-Bold.woff") format("woff");
-//     font-weight: 700;
-//     font-style: normal;
-// }
+@font-face {
+    font-family: "KyivTypeSans";
+    src: url("../fonts/KyivTypeSans-Medium2.woff2") format("woff2"),
+        url("../fonts/KyivTypeSans-Medium2.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: "KyivTypeSans";
+    src: url("../fonts/KyivTypeSans-Regular2.woff2") format("woff2"),
+        url("../fonts/KyivTypeSans-Regular2.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "KyivTypeSans";
+    src: url("../fonts/KyivTypeSans-Bold.woff2") format("woff2"),
+        url("../fonts/KyivTypeSans-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
 // @font-face {
 //     font-family: "Laqonic4F";
 //     src: url("../fonts/Laqonic4FUnicase-Regular.woff2") format("woff2"),
