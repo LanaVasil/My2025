@@ -14,10 +14,9 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
   // сторінка на яку переходить зареєстрований та авторізований(залогінений) користувач
-  Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+//   Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+  Route::get('home', [UserController::class, 'home'])->name('home');
 
-
-  Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
 
   Route::get('devices', [UserController::class, 'devices'])->name('devices');
 });
@@ -59,7 +58,7 @@ Route::middleware('auth')->group(function () {
   // 2 відповідає за підтверження користувача при переході по посиланню
   Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
-    return redirect()->route('dashboard');
+    return redirect()->route('home');
   })->middleware('signed')->name('verification.verify');
 
   // 3 відповідає за повторне відправлення листа

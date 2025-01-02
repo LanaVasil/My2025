@@ -2,7 +2,7 @@
 
   <nav class="navbar navbar-expand-lg top-navbar" >
     <div class="container-fluid">
-        <a href="{{ route('dashboard') }}" class="logo d-flex align-items-center">
+        <a href="{{ route('home') }}" class="logo d-flex align-items-center">
             <img src="{{ asset('storage/img/favicon.svg') }}" alt="Logo">
             <span class="d-none d-sm-block">ДУ "ЦОП НПУ"</span>
         </a>
@@ -141,7 +141,7 @@
 
           <li class="dropdown">
             <a href="#" class="dropdown-toggle " data-bs-toggle="dropdown">
-                <i class="bi bi-person"></i><span>{{ auth()->user()->name }}</span>
+                {{ auth()->user()->name }}
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
 
@@ -152,12 +152,16 @@
             <li>
               <hr class="dropdown-divider">
             </li>
-              <li><a wire:navigate href="#" class="dropdown-item">
-                <span>{{ __('Особистий кабінет') }}</span></a></li>
-              <li><a wire:navigate href="{{ route('register') }}" class="dropdown-item">
-          <span>{{ __('Реєстрація') }}</span></a></li>
-              <li><a wire:navigate href="{{ route('logout') }}" class="dropdown-item">
-            <span>{{ __('Вихід') }}</span></a></li>
+            <li>
+                <a wire:navigate href="#" class="dropdown-item">
+                    {{ __('Особистий кабінет') }}
+                </a>
+            </li>
+            <li>
+                <a wire:navigate href="{{ route('logout') }}" class="dropdown-item">
+                    {{ __('Вихід') }}
+                </a>
+            </li>
             </ul>
           </li>
         </ul>

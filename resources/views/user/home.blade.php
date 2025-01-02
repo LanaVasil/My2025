@@ -1,17 +1,15 @@
 @extends('components.layouts.main')
 
-@section('title', 'Dashboard')
+@section('title', 'Загальна')
 
 @section('content')
 
-<div class="wrapper">
-<!-- Флеш повідомлення (показати і після цього видалили з сесії). Відображення повідомлення про вдалу Add / Edit / Delete -->
-@include('includes.flash')
+<div class="main__container">
+    {{-- Breadcrumbs / хлібні крихти, назва сторинки  --}}
+    @include('includes.breadcrumbs')
 
-
-
-
-
+    <!-- Флеш повідомлення (показати і після цього видалили з сесії). Відображення повідомлення про вдалу Add / Edit / Delete -->
+    @include('includes.flash')
 
     <section class="section profile">
       <div class="row">
@@ -35,8 +33,6 @@
         </div>
 
         <div class="col-xl-8">
-
-          @include('includes.breadcrumbs')
 
           <div class="card">
             <div class="card-body pt-3">

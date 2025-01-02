@@ -21,10 +21,11 @@
       <div class="col-12">
         <nav class="breadcrumbs">
           <ul>
-            <li><a href="#"><i class="bi bi-house-door"></i></a></li>
+            <li><a href="{{ route('home') }}"><i class="bi bi-house-door"></i></a></li>
             <li><a href="#">Пристрої</a></li>
 
             <li><h4>jhkjh</h4></li>
+            <li><h4>{{ active_link(['devices*']) }}</h4></li>
           </ul>
         </nav>
       </div>

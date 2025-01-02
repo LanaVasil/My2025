@@ -72,7 +72,7 @@ class UserController extends Controller
     if (Auth::attempt($credentials, $request->boolean('remember'))) {
       // перестворення/ утворення нової сесії для користувача
       $request->session()->regenerate();
-      return redirect()->intended('dashboard')->with(flash('Вітаю! ' . Auth::user()->name . 'до роботи!','info'));
+      return redirect()->intended('home')->with(flash( Auth::user()->name . '! Вітаємо Вас у '.config('app.name') ,'info'));
     }
 
     //   return back()->withErrors([
@@ -93,9 +93,9 @@ class UserController extends Controller
   }
 
   // краще створити окремий контролер під адмінку
-  public function dashboard()
+  public function home()
   {
-    return view('user.dashboard');
+    return view('user.home');
   }
 
 // відправка пароля на email
