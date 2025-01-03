@@ -7,6 +7,7 @@ use App\Models\Brand;
 use App\Models\DevType;
 use App\Models\Device;
 use Livewire\WithFileUploads;
+use Livewire\Attributes\Validate;
 use Barryvdh\Debugbar\Facades\Debugbar;
 
 class DeviceAdd extends Component
@@ -17,27 +18,29 @@ class DeviceAdd extends Component
 
     public $name, $note, $status, $photo, $dev_type_id , $brand_id;
 
-    // public function mount()
-    // {
-    //     $this->brands = Brand::all();
-    // }
+    #[Validate(['photos.*' => 'image|max:2048'])]  // 2MB Max 2048
+    public $photos = [];
+    public $path = '';
 
     public function saveRow(){
 
         $this->validate([
             'name'=> 'required|string|unique:devices|min:3|max:255',
-            'photo' => 'image|max:2048', // 1MB Max
+            // 'photo' => 'image|max:2048', // 2MB Max
         ]);
 
-        $path =$this->photo->store(path: 'devices');
 
-        // $path = $this->photo->storePublicly(path: 'photos');// $path = $this->img->store('devices','public');
+        // $path =$this->photo->store(path: 'devices');
+
+        foreach ($this->photos as $photo) {
+            $this->path .= $photo->store(path: 'devices').';';
+        }
 
         Device::create([
             'name'=> $this->name,
             'note'=> $this->note,
             // 'status'=> $this->status,
-            'photo'=> $path,
+            'photo'=> $this->path,
             'dev_type_id'=> $this->dev_type_id,
             'brand_id'=> $this->brand_id,
     ]);
