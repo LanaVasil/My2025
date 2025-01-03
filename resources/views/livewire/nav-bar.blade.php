@@ -69,14 +69,24 @@
                             {{ __('Довідник пристроїв') }}
                         </a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a wire:navigate href="{{ route('devices') }}">
                             {{ __('Види пристроїв') }}
                         </a>
+                    </li> --}}
+                    <li>
+                        <a wire:navigate href="{{ route('admin.brands') }}">
+                            {{ __('Довідник брендів') }}
+                        </a>
                     </li>
                     <li>
-                        <a wire:navigate href="{{ route('devices') }}">
-                            {{ __('Довідник брендів') }}
+                        <a wire:navigate href="{{ route('admin.device.add') }}">
+                            {{ __('Довідник пристроїв add') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a wire:navigate href="{{ route('admin.repair-devices') }}">
+                            {{ __('Пристрої у кошик') }}
                         </a>
                     </li>
 

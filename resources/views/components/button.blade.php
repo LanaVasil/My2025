@@ -5,5 +5,5 @@
   'label' => null,
 ])
 
-<button class="btn btn-outline-warning {{$class}}" type="submit">{{$label}}</button>
+<button class="btn btn-outline-warning {{$class}}" type="submit" {{$attributes}}>{{$label}}</button>
 

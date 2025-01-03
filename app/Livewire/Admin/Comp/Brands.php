@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Admin\Comp;
 
 use Livewire\Component;
 use App\Models\Brand;
 
-class BrandComponent extends Component
+class Brands extends Component
 {
+    public $titlePage = 'Довідник брендів';
     public $name;
 
     public $brands;
@@ -30,8 +31,9 @@ class BrandComponent extends Component
 
     public function render()
     {
-        return view('livewire.brand-component',[
+        return view('livewire.admin.comp.brands',[
             'rows'=> $this->brands,
         ])->layout('components.layouts.admin');
     }
+
 }

@@ -72,7 +72,7 @@ class UserController extends Controller
     if (Auth::attempt($credentials, $request->boolean('remember'))) {
       // перестворення/ утворення нової сесії для користувача
       $request->session()->regenerate();
-      return redirect()->intended('home')->with(flash( Auth::user()->name . '! Вітаємо Вас у '.config('app.name') ,'info'));
+      return redirect()->intended('home')->with(flash( Auth::user()->name . ' вітаємо у '.config('app.name') .'!','info'));
     }
 
     //   return back()->withErrors([

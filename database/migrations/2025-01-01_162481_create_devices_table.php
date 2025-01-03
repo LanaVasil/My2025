@@ -21,7 +21,7 @@ return new class extends Migration
         $table->string('note')->nullable();
         $table->tinyInteger('status')->default(1);
         // $table->enum('status',['actual', 'unactual', 'noservice'])->default('active');
-        $table->string('img')->default(true);
+        $table->string('photo')->nullable();
         $table->foreignIdFor(Brand::class)
           ->nullable()
           ->constrained()
