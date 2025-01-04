@@ -85,8 +85,8 @@
                         </a>
                     </li>
                     <li>
-                        <a wire:navigate href="{{ route('admin.repair-devices') }}">
-                            {{ __('Пристрої у кошик') }}
+                        <a wire:navigate href="{{ route('admin.orders') }}">
+                            {{ __('Orders') }}
                         </a>
                     </li>
 

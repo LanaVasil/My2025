@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Builder;
 
 use App\Models\Brand;
 use App\Models\DevType;
+use App\Models\Order;
 
 class Device extends Model
 {
@@ -48,5 +50,10 @@ class Device extends Model
     public function dev_type(): BelongsTo
     {
       return $this->belongsTo(DevType::class, 'dev_type_id', 'id');
+    }
+
+    public function orders(): HasMany
+    {
+       return $this->hasMany(Order::class);
     }
 }

@@ -1,5 +1,12 @@
 <?php
 
+// role:
+// pro - customer[клієнт]
+// user
+// admin
+// boss
+
+use App\Http\Controllers\User\BrandsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -11,7 +18,14 @@ use App\Livewire\Devices\DeviceEdit;
 
 use App\Livewire\Admin\Comp\Brands;
 use App\Livewire\Admin\Comp\DeviceAdd;
-use App\Livewire\Admin\Comp\RepairDevices;
+use App\Livewire\Admin\Comp\OrderManagement;
+
+use App\Livewire\Pro\Comp\DevicesCart;
+use App\Livewire\Pro\Comp\DeviceShow;
+use App\Livewire\Pro\Comp\DevicesList;
+
+use App\Http\Controllers\BrandController;
+
 // use Illuminate\Support\Facades\Password;
 
 
@@ -26,20 +40,30 @@ Route::middleware(['auth', 'verified'])->group(function () {
 // напрямок Computer
     Route::get('/admin/brands', Brands::class)->name('admin.brands');
     Route::get('/admin/device/add', DeviceAdd::class)->name('admin.device.add');
-    Route::get('/admin/repairdevices', RepairDevices::class)->name('admin.repair-devices');
+    Route::get('/admin/orders', OrderManagement::class)->name('admin.orders');
 });
 
 
 
 Route::middleware(['auth', 'verified'])->group(function () {
-  // сторінка на яку переходить зареєстрований та авторізований(залогінений) користувач
+// сторінка на яку переходить зареєстрований та авторізований(залогінений) користувач
 //   Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
-  Route::get('home', [UserController::class, 'home'])->name('home');
+ Route::get('home', [UserController::class, 'home'])->name('home');
 
 // Route::get('/devices', DeviceList::class)->name('devices');
-  Route::get('/devices', DeviceTable::class)->name('devices');
+Route::get('/devices', DeviceTable::class)->name('devices');
 //   Route::get('/devices/add', DeviceAdd::class)->name('devices.add');
-  Route::get('/devices/edit', DeviceEdit::class)->name('devices.edit');
+Route::get('/devices/edit', DeviceEdit::class)->name('devices.edit');
+
+// PANEL PRO - profesional
+// Route::get('/brand/{id}', [BrandController::class,'show'])->name('brand.show');
+
+Route::get('/list', DevicesList::class)->name('devices.list');
+Route::get('/device/{id}', DeviceShow::class)->name('device.show');
+
+// Route::middleware(['auth', 'verified','rolemanager:customer'])->group(function () {
+Route::get('/cart', DevicesCart::class)->name('cart');
+// ./PANEL PRO - profesional
 
   // Route::get('devices', [UserController::class, 'devices'])->name('devices');
 
