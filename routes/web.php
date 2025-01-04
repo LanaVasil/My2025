@@ -16,6 +16,10 @@ use App\Livewire\Devices\DeviceTable;
 // use App\Livewire\Devices\DeviceAdd;
 use App\Livewire\Devices\DeviceEdit;
 
+// Admin
+use App\Livewire\AdminOverview;
+
+// PRO
 use App\Livewire\Admin\Comp\Brands;
 use App\Livewire\Admin\Comp\DeviceAdd;
 use App\Livewire\Admin\Comp\OrderManagement;
@@ -55,8 +59,11 @@ Route::get('/devices', DeviceTable::class)->name('devices');
 //   Route::get('/devices/add', DeviceAdd::class)->name('devices.add');
 Route::get('/devices/edit', DeviceEdit::class)->name('devices.edit');
 
+// PANEL ADMIN
+Route::get('admin/dashboard', AdminOverview::class)->name('admin.dashboard');
+
 // PANEL PRO - profesional
-// Route::get('/brand/{id}', [BrandController::class,'show'])->name('brand.show');
+Route::get('/brand/{id}', [BrandController::class,'index'])->name('brand.show');
 
 Route::get('/list', DevicesList::class)->name('devices.list');
 Route::get('/device/{id}', DeviceShow::class)->name('device.show');

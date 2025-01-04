@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Device;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
@@ -9,9 +10,11 @@ class BrandController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $devices = Device::where('brand_id', $id)->get();
+
+        return view('brand', compact('devices'));
     }
 
     /**

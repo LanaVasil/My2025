@@ -18,11 +18,6 @@ class DeviceTable extends Component
     // !!! Device.status=9 - картриджі не заправляються
 
     use WithPagination;
-
-    public $search = '';
-    public $sortByColumn = 'name';
-    public $sortDirection = 'DESC';
-
     public $pagination=10;
     public $paginationList = [
       '10'=>'10',
@@ -30,6 +25,10 @@ class DeviceTable extends Component
       '50'=>'50',
       '100'=>'100',
     ];
+
+    public $search = '';
+    public $sortByColumn = 'name';
+    public $sortDirection = 'DESC';
 
     public $listDevTypes = [];
     public $filterDevTypes = [];
@@ -189,8 +188,7 @@ public function setSort($column)  {
         'dev_types'=>$this->getDevTypes(),
         'brands'=>$this->getBrands() ])
       ->layoutData([
-        'metaAutor'=>'Vasilyeva Svitlana',
-        'titlePage'=>$this->titlePage])
+                'titlePage'=>$this->titlePage])
       ->layout('components.layouts.app');
     }
 }

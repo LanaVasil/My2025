@@ -31,7 +31,7 @@
   </header> --}}
 
 
-    <livewire:nav-bar/>
+    <livewire:admin-nav-bar/>
 
 
     <!-- ======= Main ======= -->

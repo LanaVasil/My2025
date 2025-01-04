@@ -2,7 +2,7 @@
 
   <nav class="navbar navbar-expand-lg top-navbar" >
     <div class="container-fluid">
-        <a href="{{ route('home') }}" class="logo d-flex align-items-center">
+        <a href="{{ route('admin.dashboard') }}" class="logo d-flex align-items-center">
             <img src="{{ asset('storage/img/favicon.svg') }}" alt="Logo">
             <span class="d-none d-sm-block">ДУ "ЦОП НПУ"</span>
         </a>

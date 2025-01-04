@@ -7,6 +7,8 @@ use Livewire\Component;
 
 class DevicesList extends Component
 {
+    public $titlePage = 'Довідник пристроїв';
+
     public function addToCart($deviceId){
 
         $device = Device::find($deviceId);
@@ -37,7 +39,9 @@ class DevicesList extends Component
     public function render()
     {
         return view('livewire.pro.comp.devices-list',[
-            'device'=> Device::all()
-        ]);
+            'rows'=> Device::all()])
+        ->layoutData([
+                'titlePage'=>$this->titlePage])
+        ->layout('components.layouts.app');
     }
 }
