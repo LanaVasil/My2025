@@ -20,7 +20,6 @@
 <body>
 
 <div id="progress">
-    {{-- <span id="progress-value">&#x1F815;</span> --}}
     <span id="progress-value">&#xF286;</span>
 </div>
 
@@ -31,21 +30,19 @@
   </header> --}}
 
 
-  <livewire:nav-bar/>
+    <livewire:nav-bar/>
 
-
-      <!-- ======= Main ======= -->
-      <main id="main" class="main">
+    <!-- ======= Main ======= -->
+    <main id="main" class="main">
 
         {{ $slot }}
 
     </main><!-- End #main -->
-      <!-- ======= ./Main ======= -->
+    <!-- ======= ./Main ======= -->
 
-
-  <!-- ======= Footer ======= -->
-  @include('includes.footer')
-  <!-- ======= ./Footer ======= -->
+    <!-- ======= Footer ======= -->
+    @include('includes.footer')
+    <!-- ======= ./Footer ======= -->
 
 </div>
   @vite(['resources/js/app.js'])

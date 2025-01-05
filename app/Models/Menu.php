@@ -7,18 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-use App\Models\Device;
+use App\Models\MenuUnit;
 
-class DevType extends Model
+class Menu extends Model
 {
-    /** @use HasFactory<\Database\Factories\DevTypeFactory> */
     use HasFactory;
     use SoftDeletes;
 
     protected $fillable = ['name', 'status', 'sort'];
 
-    public function devices(): HasMany
+    public function menu_units(): HasMany
     {
-      return $this->hasMany(Device::class);
+      return $this->hasMany(MenuUnit::class);
     }
 }

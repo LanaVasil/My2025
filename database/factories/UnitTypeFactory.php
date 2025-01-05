@@ -18,7 +18,7 @@ class UnitTypeFactory extends Factory
     {
         return [
           'name' => $this->faker->unique()->bank,
-          'status' => $this->faker->boolean(),
+          'status' => $this->faker->randomElement(['0', '1']),
           'sort' => $this->faker->randomDigit()
         ];
     }

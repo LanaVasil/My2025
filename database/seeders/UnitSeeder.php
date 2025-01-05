@@ -14,12 +14,13 @@ class UnitSeeder extends Seeder
      */
     public function run(): void
     {
- 
-    UnitType::factory(15)
-      ->has(Unit::factory(rand(5,10)))
-      ->create(); 
-    }
-    // Unit::factory(50)
-    // ->create(); 
+    // працює без помилок але додає UnitType кфтдомні значення
+    // UnitType::factory(15)
+    //   ->has(Unit::factory(rand(5,10)))
+    //   ->create();
     // }
+
+    Unit::factory(15)
+    ->create();
+    }
 }

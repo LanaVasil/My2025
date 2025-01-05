@@ -34,8 +34,8 @@ return new class extends Migration
             ->constrained()
             ->cascadeOnUpdate()
             ->nullOnDelete();
-            // $table->date('work_at')->nullable();
-            // $table->date('order_at')->nullable();
+            // $table->date('start_at')->nullable();
+            // $table->date('end_at')->nullable();
         });
     }
 

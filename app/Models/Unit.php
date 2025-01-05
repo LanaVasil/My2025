@@ -5,12 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Builder;
 
-use App\Models\Unitype;
+use App\Models\UnitType;
+use App\Models\UnitWorker;
+use App\Models\MenuUnite;
 use App\Models\Worker;
-use App\Models\Document;
+// use App\Models\Document;
 use App\Models\State;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
@@ -43,8 +46,18 @@ class Unit extends Model
 
   public function unit_type(): BelongsToMany
   {
-    // return $this->belongsToMany(Unitype::class, 'unit_type_id', 'id');
-    return $this->belongsToMany(Unitype::class);
+    return $this->belongsToMany(UnitType::class);
+  }
+
+    public function unit_workers(): HasMany
+  {
+    return $this->hasMany(UnitWorker::class);
+  }
+
+
+  public function menu_unit(): BelongsToMany
+  {
+    return $this->belongsToMany(MenuUnit::class);
   }
   // public function unit_type(): BelongsTo
   // {
@@ -54,10 +67,10 @@ class Unit extends Model
   // public function states(): HasMany
   // {
   //   return $this->hasMany(State::class);
-  // } 
-  
+  // }
+
   // public function workers(): HasMany
   // {
   //   return $this->hasMany(Worker::class);
-  // } 
+  // }
 }

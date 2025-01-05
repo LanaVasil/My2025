@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\DevType;
-use App\Models\Brand;
+// use App\Models\DevType;
+// use App\Models\Brand;
 use App\Models\Device;
 
 class DeviceSeeder extends Seeder
@@ -15,6 +15,6 @@ class DeviceSeeder extends Seeder
    */
   public function run(): void
   {
-    Device::factory(100)->create(); 
+    Device::factory(100)->create();
   }
 }

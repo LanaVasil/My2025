@@ -26,7 +26,7 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPassword
         'name',
         'email',
         'login',
-        'role',
+        'is_admin',
         'password',
     ];
 

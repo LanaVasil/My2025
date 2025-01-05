@@ -23,10 +23,11 @@ class StateFactory extends Factory
             'name' => ucfirst($this->faker->words(2, true)),
             'post_id' => Post::query()->inRandomOrder()->value('id'),
             'unit_id' => Unit::query()->inRandomOrder()->value('id'),
-            'num' => $this->faker->numberBetween(0, 1),
-            'start_at' => $this->faker->dateTime()->format('Y-m-d'),
+            'quantity' => $this->faker->numberBetween(4,5,10),
+            'start_at' => '2024-01-04',
+            // 'start_at' => $this->faker->dateTime()->format('Y-m-d'),
             'status' => $this->faker->numberBetween(0, 1),
             'sort' => $this->faker->numberBetween(1, 99)
-        ];        
+        ];
     }
 }

@@ -21,7 +21,11 @@ return new class extends Migration
             $table->string('income', 32)->nullable();
             $table->string('name_full', 255)->nullable();
             $table->string('name', 64)->nullable();
-            $table->foreignIdFor(Unit::class)->constrained();
+            $table->foreignIdFor(Unit::class)
+            ->nullable()
+            ->constrained()
+            ->cascadeOnUpdate()
+            ->nullOnDelete();
             $table->date('unitdoc_at')->nullable();
             $table->string('unitdoc', 32)->unique()->nullable();
             $table->date('ddzdoc_at')->nullable();

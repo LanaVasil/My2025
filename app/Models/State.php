@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Builder;
 
+use App\Models\Worker;
 class State extends Model
 {
     use HasFactory;
@@ -18,7 +19,7 @@ class State extends Model
   // protected $fillable = ['name', 'status', 'brand_id', 'devtype_id'];
 
   // захищені поля. якщо $guarded порожній, то все що не $guarded - розглядаються як філевл
-  protected $guarded = []; 
+  protected $guarded = [];
 
 
   public function scopeHomePage(Builder $query)
@@ -43,7 +44,7 @@ class State extends Model
     {
       return $this->belongsTo(Post::class, 'post_id', 'id');
     }
-    
+
     public function unit(): BelongsTo
     {
       return $this->belongsTo(Unit::class, 'unit_id', 'id');
@@ -52,5 +53,5 @@ class State extends Model
     public function workes(): HasMany
     {
       return $this->hasMany(Worker::class);
-    } 
+    }
 }

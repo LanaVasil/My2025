@@ -4,11 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Builder;
 
-class UnitType extends Model
+use App\Models\Unit;
+
+class UnitWorker extends Model
 {
     use HasFactory;
     use SoftDeletes;
@@ -27,8 +29,8 @@ class UnitType extends Model
     $query->where('name', 'like', "%{$value}%");
   }
 
-  public function units(): HasMany
-  {
-    return $this->hasMany(Unit::class);
-  }  
+    public function unit(): BelongsTo
+    {
+      return $this->belongsTo(Unit::class, 'unit_id', 'id');
+    }
 }

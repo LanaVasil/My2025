@@ -33,19 +33,21 @@ class DatabaseSeeder extends Seeder
     // ->create();
     // }
 
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
 
     $this->call([
+
+      UserSeeder::class,
+      UnitTypeSeeder::class,
+      UnitSeeder::class,
+      UnitWorkerSeeder::class,
+      RoleSeeder::class,
+      MenuSeeder::class,
       BrandSeeder::class,
       DevTypeSeeder::class,
       DeviceSeeder::class,
-      // UnitSeeder::class,
-      // PostSeeder::class,
-      // StateSeeder::class,
-      // WorkerSeeder::class,
+      PostSeeder::class,
+      StateSeeder::class,
+      WorkerSeeder::class,
       // DocumentSeeder::class,
       // RepairSeeder::class,
       // RepdeviceSeeder::class

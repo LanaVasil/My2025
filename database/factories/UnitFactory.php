@@ -22,7 +22,7 @@ class UnitFactory extends Factory
         return [
           'name_full' => ucfirst($this->faker->words(3, true)),
           'name' => $this->faker->unique()->company,
-          'status' => $this->faker->boolean(),
+          'status' => $this->faker->randomElement(['0', '1']),
           'unit_type_id'=>UnitType::query()->inRandomOrder()->value('id'),
         ];
     }

@@ -13,8 +13,8 @@ class PostSeeder extends Seeder
      */
     public function run(): void
     {
-            // створюємо 30-Post и для кожного рандомно від 1 до 3 - Brand
-            Post::factory(30)
+    // створюємо 30-Post и для кожного рандомно від 1 до 3 - Brand
+    Post::factory(30)
     // ->has(Post::factory(rand(1, 3)))
     ->create();
     }

@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('phone', 64)->nullable();
             $table->string('cellphone', 64)->nullable();
             $table->string('email', 64)->nullable();
+            $table->string('img')->nullable();
             // $table->foreignIdFor(Post::class)->constrained();
             $table->foreignIdFor(State::class)->constrained();
             $table->decimal('rate', 8, 2)->default(1);
