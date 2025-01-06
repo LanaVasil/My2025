@@ -72,6 +72,13 @@ class UserController extends Controller
     if (Auth::attempt($credentials, $request->boolean('remember'))) {
       // перестворення/ утворення нової сесії для користувача
       $request->session()->regenerate();
+
+      // $user = session()->get('user',[]);
+      if (!isset(Auth::user()->worker_id) || !isset(Auth::user()->role_id )
+      { dd(Auth::user());
+        return redirect()->intended('home')->with(flash( Auth::user()->name . ' вітаємо! Ви потрапили до '.config('app.name') .'Адміністатор ще візначив коло Ваших прав. '.config('app.name') .'!','info'));
+      }
+
       return redirect()->intended('home')->with(flash( Auth::user()->name . ' вітаємо у '.config('app.name') .'!','info'));
     }
 

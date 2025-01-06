@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+
 use App\Models\Unit;
 use App\Models\Menu;
 
@@ -24,6 +25,7 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
             $table->string('name', 32)->unique()->nullable();
+            $table->string('route', 255)->nullable();            
             $table->tinyInteger('parent_id')->default(0);
             $table->tinyInteger('status')->default(1);
             $table->tinyInteger('sort')->unsigned()->default(99);
