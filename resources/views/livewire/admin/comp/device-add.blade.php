@@ -25,11 +25,11 @@
 
         <x-input name="name" length="255" label="Назва (від 2 до 255)" type="text" wire:model="name" value="{{ old('name') }}" placeholder="від 2 до 255" />
 
-        <x-input name="note" length="255" label="Примітка (до 255)" type="text" wire:model="note" value="{{ old('note') }}" placeholder="У разі потреби додаткових характеристик до 255 символів"/>
+        <x-input name="note" length="15" label="Примітка (до 255)" type="text" wire:model="note" value="{{ old('note') }}" placeholder="У разі потреби додаткових характеристик до 255 символів"/>
 
 
-        <input type="file" wire:model="photos" multiple>
-        @error('photos.*') <span class="error">{{ $message }}</span> @enderror
+        <input type="file" wire:model="img">
+        @error('img') <span class="error">{{ $message }}</span> @enderror
 
         <x-button label="{{ __('Додати') }}"/>
         {{-- <x-button label="{{ __('Add to Cart') }}" wire:click="addToCart({{ $device_id }})"/> --}}

@@ -16,11 +16,11 @@ class UserController extends Controller
 {
   public function devices()
   {
-    return view('devices.devices');
+    return view('devices.devices', ['titlePage' => 'Пристрої']);
   }
   public function create()
   {
-    return view('user.create');
+    return view('user.create', ['titlePage' => 'Реєстрація']);
   }
 
   public function store(Request $request)
@@ -54,7 +54,7 @@ class UserController extends Controller
 
   public function login()
   {
-    return view('user.login');
+    return view('user.login', ['titlePage' => 'Логін']);
   }
 
   public function loginAuth(Request $request): RedirectResponse
@@ -62,26 +62,26 @@ class UserController extends Controller
     // dump($request->boolean('remember'));
     // dd($request->all());
 
-
     $credentials = $request->validate([
       'login' => ['required'],
       'password' => ['required'],
     ]);
+  
 
-    // 'is_active'=>'1'
     if (Auth::attempt($credentials, $request->boolean('remember'))) {
-      // перестворення/ утворення нової сесії для користувача
+      // для користувача сесія: перестворення / утворення нової 
       $request->session()->regenerate();
 
-      // $user = session()->get('user',[]);
-      if (!isset(Auth::user()->worker_id) || !isset(Auth::user()->role_id )
-      { dd(Auth::user());
-        return redirect()->intended('home')->with(flash( Auth::user()->name . ' вітаємо! Ви потрапили до '.config('app.name') .'Адміністатор ще візначив коло Ваших прав. '.config('app.name') .'!','info'));
+      // .', worker='.Auth::user()->worker.', role='.Auth::user()->role
+      if ( Auth::user()->is_admin || (Auth::user()->worker_id > 0 && Auth::user()->role_id > 0 ) ) { 
+        flash( Auth::user()->name .' вітаємо у '.config('app.name') .'!','info');
+      }else{
+        flash( Auth::user()->name .' вітаємо! Зачекайте поки Адміністратор '.config('app.name') .' визначить коло Ваших прав.','info');
       }
-
-      return redirect()->intended('home')->with(flash( Auth::user()->name . ' вітаємо у '.config('app.name') .'!','info'));
-    }
-
+    // return redirect()->intended('home')->with(flash( Auth::user()->name . ' вітаємо у '.config('app.name') .'!','info'));
+    return redirect()->intended('home');
+  }
+  
     //   return back()->withErrors([
     //     'email' => 'The provided credentials do not match our records.',
     // ])->onlyInput('email');
@@ -96,13 +96,13 @@ class UserController extends Controller
   public function logout()
   {
     Auth::logout();
-    return redirect()->route('login');
+    return redirect()->route('login', ['titlePage' => 'Логін']);
   }
 
   // краще створити окремий контролер під адмінку
   public function home()
   {
-    return view('user.home');
+    return view('user.home', ['titlePage' => 'Головна'] );
   }
 
 // відправка пароля на email
@@ -117,8 +117,10 @@ public function forgotPasswordStore(Request $request){
                 // ? back()->with(['sent' => __($status)])
                 // ? back()->with(['success' => __($status)])
 
+              // ? back()->with( flash(__($status)) )
+              // : back()->withErrors(['email' => __($status)]);
               ? back()->with( flash(__($status)) )
-              : back()->withErrors(['email' => __($status)]);
+              : back()->withErrors( flash(__($status)) );
 }
 
 public function resetPasswordUpdate(Request $request){

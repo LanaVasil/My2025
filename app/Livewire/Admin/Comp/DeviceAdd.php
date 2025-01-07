@@ -16,31 +16,23 @@ class DeviceAdd extends Component
 
     public $titlePage = 'Довідник пристроїв. Додати.';
 
-    public $name, $note, $status, $photo, $dev_type_id , $brand_id;
-
-    #[Validate(['photos.*' => 'image|max:2048'])]  // 2MB Max 2048
-    public $photos = [];
-    public $path = '';
+    public $name, $note, $status, $img, $dev_type_id , $brand_id;
 
     public function saveRow(){
 
         $this->validate([
             'name'=> 'required|string|unique:devices|min:3|max:255',
-            // 'photo' => 'image|max:2048', // 2MB Max
+            'img' => 'image|max:2048', // 2MB Max
         ]);
 
 
-        // $path =$this->photo->store(path: 'devices');
-
-        foreach ($this->photos as $photo) {
-            $this->path .= $photo->store(path: 'devices').';';
-        }
+        $path =$this->img->store(path: 'devices');
 
         Device::create([
             'name'=> $this->name,
             'note'=> $this->note,
             // 'status'=> $this->status,
-            'photo'=> $this->path,
+            'img'=> $path,
             'dev_type_id'=> $this->dev_type_id,
             'brand_id'=> $this->brand_id,
     ]);

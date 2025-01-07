@@ -19,7 +19,7 @@ class Device extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['name', 'note', 'status', 'photo', 'brand_id', 'dev_type_id'];
+    protected $fillable = ['name', 'note', 'status', 'img', 'brand_id', 'dev_type_id'];
 
 
     public function scopeHomePage(Builder $query)
