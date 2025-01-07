@@ -18,6 +18,13 @@ class UserController extends Controller
   {
     return view('devices.devices', ['titlePage' => 'Пристрої']);
   }
+
+  // краще створити окремий контролер під адмінку
+  public function home()
+  {
+    return view('user.home', ['titlePage' => 'Головна'] );
+  }
+
   public function create()
   {
     return view('user.create', ['titlePage' => 'Реєстрація']);
@@ -97,12 +104,6 @@ class UserController extends Controller
   {
     Auth::logout();
     return redirect()->route('login', ['titlePage' => 'Логін']);
-  }
-
-  // краще створити окремий контролер під адмінку
-  public function home()
-  {
-    return view('user.home', ['titlePage' => 'Головна'] );
   }
 
 // відправка пароля на email

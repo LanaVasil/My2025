@@ -33,7 +33,7 @@ class Brands extends Component
     {
         return view('livewire.admin.comp.brands',[
             'rows'=> $this->brands,
-        ])->layout('components.layouts.admin');
+        ])->layout('components.layouts.main');
     }
 
 }

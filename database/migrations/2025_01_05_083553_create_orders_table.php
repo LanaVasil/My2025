@@ -28,7 +28,7 @@ return new class extends Migration
               ->nullOnDelete();
             $table->enum('status',['pending', 'approved', 'cancelled'])->default('pending');
             $table->string('name', 255)->nullable();
-            $table->string('quantity', 255)->default(0);
+            $table->string('quantity', 10)->default(0);
         });
 
     //   Schema::create('orders_items', function (Blueprint $table) {

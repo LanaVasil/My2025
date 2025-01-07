@@ -42,6 +42,6 @@ class DevicesList extends Component
             'rows'=> Device::all()])
         ->layoutData([
                 'titlePage'=>$this->titlePage])
-        ->layout('components.layouts.app');
+        ->layout('components.layouts.main');
     }
 }

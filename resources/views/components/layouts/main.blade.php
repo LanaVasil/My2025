@@ -12,6 +12,7 @@
     <link href="{{ asset('storage/img/favicon.svg')}}" rel="shortcut icon" type="image/x-icon">
 
     @vite(['resources/sass/app.scss'])
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}    
 </head>
 
 <body>
@@ -22,13 +23,19 @@
     </div>
 
     <div class="wrapper">
+  {{-- <header id="header" class="header fixed-top d-flex align-items-center"> --}}
+  {{-- <header id="header" class="header d-flex align-items-center">
+    header
+  </header> --}}
 
         <livewire:nav-bar/>
 
 
         <!-- ======= Main ======= -->
         <main id="main" class="main">
-            @yield('content')
+
+          {{ $slot }}
+          
         </main><!-- End #main -->
         <!-- ======= ./Main ======= -->
 

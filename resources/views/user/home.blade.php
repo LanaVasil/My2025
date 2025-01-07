@@ -11,6 +11,8 @@
     <!-- Флеш повідомлення (показати і після цього видалили з сесії). Відображення повідомлення про вдалу Add / Edit / Delete -->
     @include('includes.flash')
 
+{{-- dd({{Auth::user()}}) --}}
+
     <section class="section profile">
       <div class="row">
         <div class="col-xl-4">

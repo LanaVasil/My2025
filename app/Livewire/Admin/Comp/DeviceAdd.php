@@ -59,7 +59,7 @@ class DeviceAdd extends Component
             ])
         ->layoutData([
             'titlePage'=>$this->titlePage])
-        ->layout('components.layouts.app');
+        ->layout('components.layouts.main');
 
     }
 }

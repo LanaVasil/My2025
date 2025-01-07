@@ -5,8 +5,8 @@
     <!-- Флеш повідомлення (показати і після цього видалили з сесії). Відображення повідомлення про вдалу Add / Edit / Delete -->
     @include('includes.flash')
 
-
-    <div class="card offset-3 col-6">
+    
+    <div class="card offset-lg-4 offset-sm-3 col-xxl-3 col-lg-4 col-sm-6 col-12">
 
     <div class="card-header">
         <h1 class="h5">{{$this->titlePage}}</h1>
@@ -23,13 +23,11 @@
           <x-select name="brand_id" label="Бренд" :items=$brands value="{{ $brand_id }}" wire:model="brand_id"/>
         </div>
 
-        <x-input name="name" length="255" label="Назва (від 2 до 255)" type="text" wire:model="name" value="{{ old('name') }}" placeholder="від 2 до 255" />
+        <x-input name="name" label="Назва (від 2 до 255)" type="text" wire:model="name" value="{{ old('name') }}" placeholder="від 2 до 255" />
 
-        <x-input name="note" length="15" label="Примітка (до 255)" type="text" wire:model="note" value="{{ old('note') }}" placeholder="У разі потреби додаткових характеристик до 255 символів"/>
+        <x-input name="note" label="Примітка (до 255)" type="text" wire:model="note" value="{{ old('note') }}" placeholder="У разі потреби додаткових характеристик до 255 символів"/>
 
-
-        <input type="file" wire:model="img">
-        @error('img') <span class="error">{{ $message }}</span> @enderror
+        <x-input-file name="img"/>
 
         <x-button label="{{ __('Додати') }}"/>
         {{-- <x-button label="{{ __('Add to Cart') }}" wire:click="addToCart({{ $device_id }})"/> --}}

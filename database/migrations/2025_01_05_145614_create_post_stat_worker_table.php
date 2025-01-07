@@ -22,6 +22,7 @@ return new class extends Migration
             $table->decimal('stake',3,2)->default(1);
             $table->tinyInteger('sort')->unsigned()->default(99);
             $table->boolean('status')->default(true);
+            $table->string('quantity', 10)->default(0);
         });
 
         Schema::create('states', function (Blueprint $table) {

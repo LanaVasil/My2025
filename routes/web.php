@@ -20,13 +20,16 @@ use App\Livewire\Devices\DeviceEdit;
 use App\Livewire\AdminOverview;
 
 // PRO
+use App\Livewire\Comp\Devices\ProDevices;
+use App\Livewire\Comp\Devices\ProDeviceShow;
+
 use App\Livewire\Admin\Comp\Brands;
 use App\Livewire\Admin\Comp\DeviceAdd;
 use App\Livewire\Admin\Comp\OrderManagement;
 
-use App\Livewire\Pro\Comp\DevicesCart;
-use App\Livewire\Pro\Comp\DeviceShow;
-use App\Livewire\Pro\Comp\DevicesList;
+// use App\Livewire\Pro\Comp\DevicesCart;
+// use App\Livewire\Pro\Comp\DeviceShow;
+// use App\Livewire\Pro\Comp\DevicesList;
 
 use App\Http\Controllers\BrandController;
 
@@ -42,9 +45,17 @@ Route::middleware(['auth', 'verified'])->group(function () {
 //     Route::get('/admin/dashboard', AdminOverview::class)->name('admin.dashboard');
 
 // напрямок Computer
-    Route::get('/admin/brands', Brands::class)->name('admin.brands');
-    Route::get('/admin/device/add', DeviceAdd::class)->name('admin.device.add');
+
+
+
+    // Route::get('/admin/brands', Brands::class)->name('admin.brands');
+    // Route::get('/admin/device/add', DeviceAdd::class)->name('admin.device.add');
     Route::get('/admin/orders', OrderManagement::class)->name('admin.orders');
+
+    Route::get('/pro/devices', ProDevices::class)->name('pro.devices');    
+    Route::get('/pro/device/{id}', ProDeviceShow::class)->name('pro.device.show');   
+   
+    
 });
 
 
@@ -55,9 +66,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
  Route::get('home', [UserController::class, 'home'])->name('home');
 
 // Route::get('/devices', DeviceList::class)->name('devices');
-Route::get('/devices', DeviceTable::class)->name('devices');
+// Route::get('/devices', DeviceTable::class)->name('devices');
 //   Route::get('/devices/add', DeviceAdd::class)->name('devices.add');
-Route::get('/devices/edit', DeviceEdit::class)->name('devices.edit');
+// Route::get('/devices/edit', DeviceEdit::class)->name('devices.edit');
 
 // PANEL ADMIN
 Route::get('admin/dashboard', AdminOverview::class)->name('admin.dashboard');
@@ -65,11 +76,11 @@ Route::get('admin/dashboard', AdminOverview::class)->name('admin.dashboard');
 // PANEL PRO - profesional
 Route::get('/brand/{id}', [BrandController::class,'index'])->name('brand.show');
 
-Route::get('/list', DevicesList::class)->name('devices.list');
-Route::get('/device/{id}', DeviceShow::class)->name('device.show');
+// Route::get('/list', DevicesList::class)->name('devices.list');
+// Route::get('/device/{id}', DeviceShow::class)->name('device.show');
 
 // Route::middleware(['auth', 'verified','rolemanager:customer'])->group(function () {
-Route::get('/cart', DevicesCart::class)->name('cart');
+// Route::get('/cart', DevicesCart::class)->name('cart');
 // ./PANEL PRO - profesional
 
   // Route::get('devices', [UserController::class, 'devices'])->name('devices');

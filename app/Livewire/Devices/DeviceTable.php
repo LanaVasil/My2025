@@ -189,6 +189,6 @@ public function setSort($column)  {
         'brands'=>$this->getBrands() ])
       ->layoutData([
                 'titlePage'=>$this->titlePage])
-      ->layout('components.layouts.app');
+      ->layout('components.layouts.main');
     }
 }

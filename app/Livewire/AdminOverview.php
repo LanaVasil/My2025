@@ -31,6 +31,6 @@ class AdminOverview extends Component
         return view('livewire.admin-overview')
         ->layoutData([
                 'titlePage'=>$this->titlePage])
-        ->layout('components.layouts.admin');
+        ->layout('components.layouts.main');
     }
 }

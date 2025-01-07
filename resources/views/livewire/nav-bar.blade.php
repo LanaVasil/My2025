@@ -64,25 +64,30 @@
                 <div class="col-lg-3 col-6">
                   <h6 class="title">{{ __('Комп\'ютери') }} </h6>
                   <ul class="list-unstyled">
-                    <li>
+                    {{-- <li>
                         <a wire:navigate href="{{ route('devices') }}">
                             {{ __('Довідник пристроїв') }}
                         </a>
-                    </li>
+                    </li> --}}
                     {{-- <li>
                         <a wire:navigate href="{{ route('devices') }}">
                             {{ __('Види пристроїв') }}
                         </a>
                     </li> --}}
-                    <li>
+                    {{-- <li>
                         <a wire:navigate href="{{ route('admin.brands') }}">
                             {{ __('Довідник брендів') }}
                         </a>
-                    </li>
-                    <li>
+                    </li> --}}
+                    {{-- <li>
                         <a wire:navigate href="{{ route('admin.device.add') }}">
                             {{ __('Довідник пристроїв add') }}
                         </a>
+                    </li> --}}
+                    <li>
+                      <a wire:navigate href="{{ route('pro.devices') }}">
+                          {{ __('Довідник пристроїв пакування') }}
+                      </a>
                     </li>
                     <li>
                         <a wire:navigate href="{{ route('admin.orders') }}">
@@ -112,7 +117,7 @@
           </li>
 
 
-          <li class="dropdown">
+          {{-- <li class="dropdown">
             <a href="#" class="dropdown-toggle " data-bs-toggle="dropdown">
                 Бренди
             </a>
@@ -124,12 +129,12 @@
                         <li><a class="dropdown-item" href="{{ route('brand.show', $brand->id) }}">{{ $brand->name }}</a></li>
                     @endforeach
             </ul>
-          </li>
+          </li> --}}
 
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a wire:navigate class="{{request()->is('admin.dashboard')?'nav-link active':'nav-link'}}"  href="{{ route('admin.dashboard') }}">{{ __('Dashboard') }}</a>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a wire:navigate class="{{request()->is('users')?'nav-link active':'nav-link'}}"  href="/users">User</a>
             </li>
@@ -138,16 +143,16 @@
         <li class="nav-item">
           <a wire:navigate class="{{request()->is('register')?'nav-link active':'nav-link'}}" href="/register">{{ __('Register') }}</a>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <a wire:navigate class="{{request()->is('brands')?'nav-link active':'nav-link'}}" href="/brands">{{ __('Бренди') }}</a>
-        </li>
+        </li> --}}
         {{-- <li class="nav-item">
           <a wire:navigate class="{{request()->is('devices')?'nav-link active':'nav-link'}}" href="/devices">{{ __('Пристрої') }}</a>
         </li> --}}
-        <li class="nav-item">
-          <a wire:navigate class="nav-link {{ active_link(['devices*']) }}" href=" {{route('devices')}}">{{ __('Пристрої') }}</a>
+        {{-- <li class="nav-item"> --}}
+          {{-- <a wire:navigate class="nav-link {{ active_link(['devices*']) }}" href=" {{route('devices')}}">{{ __('Пристрої') }}</a> --}}
           {{-- <a wire:navigate class="nav-link {{ active_link(['devices','devices.add','devices.edit']) }}" href=" {{route('devices')}}">{{ __('Пристрої') }}</a> --}}
-        </li>
+        {{-- </li> --}}
 
         </ul>
         </div> <!-- ./offcanvas-body -->
