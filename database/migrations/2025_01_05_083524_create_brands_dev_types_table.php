@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('name', 32)->unique()->nullable();
             $table->tinyInteger('status')->default(1);
             $table->tinyInteger('sort')->unsigned()->default(99);
+            $table->Integer('user_id')->unsigned()->default(0);
       });
 
       Schema::create('dev_types', function (Blueprint $table) {

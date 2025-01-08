@@ -22,6 +22,7 @@ class RepairFactory extends Factory
             'content' => ucfirst($this->faker->words(2, true)),
             'unit_id' => Unit::query()->inRandomOrder()->value('id'),
             'worker_id' => Worker::query()->inRandomOrder()->value('id'),
+            'box' => $this->faker->numberBetween(1, 5),
             'status' => $this->faker->boolean()
         ];
     }

@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 use App\Models\UnitType;
 use App\Models\UnitWorker;
+use App\Models\Repair;
 use App\Models\MenuUnite;
 use App\Models\Worker;
 // use App\Models\Document;
@@ -23,7 +24,7 @@ class Unit extends Model
   use SoftDeletes;
 
   // protected $fillable = ['name', 'content'] -  перелік полів які можно заповнювати методoм only
-  protected $fillable = ['name_full', 'name', 'sort', 'parent_id', 'unitype_id', 'status'];
+  protected $fillable = ['name_full', 'name', 'sort', 'parent_id', 'unit_type_id', 'status', 'user_id'];
 
   public function scopeHomePage(Builder $query)
   {
@@ -49,9 +50,14 @@ class Unit extends Model
     return $this->belongsToMany(UnitType::class);
   }
 
-    public function unit_workers(): HasMany
+  public function unit_workers(): HasMany
   {
     return $this->hasMany(UnitWorker::class);
+  }
+
+  public function repairs(): HasMany
+  {
+    return $this->hasMany(Repair::class);
   }
 
 

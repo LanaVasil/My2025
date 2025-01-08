@@ -37,7 +37,7 @@ return new class extends Migration
       $table->tinyInteger('sort')->unsigned()->default(99);
       $table->bigInteger('parent_id')->unsigned()->default(0);
     //   $table->foreignIdFor(UnitType::class)
-        $table->foreignIdFor(UnitType::class)
+      $table->foreignIdFor(UnitType::class)
             ->nullable()
             ->constrained()
             ->cascadeOnUpdate()
@@ -46,7 +46,8 @@ return new class extends Migration
         ->nullable()
         ->constrained()
         ->cascadeOnUpdate()
-        ->nullOnDelete();;
+        ->nullOnDelete();
+      $table->Integer('user_id')->unsigned()->default(0);
     });
 
     Schema::create('unit_workers', function (Blueprint $table) {
@@ -63,7 +64,8 @@ return new class extends Migration
             ->cascadeOnUpdate()
             ->nullOnDelete();
             $table->boolean('status')->default(true);
-        });
+            $table->Integer('user_id')->unsigned()->default(0);
+          });
   }
 
   /**

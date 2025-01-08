@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Builder;
 
 use App\Models\State;
-use App\Models\Worker;
+use App\Models\RepairDevice;
 
 class Worker extends Model
 {
@@ -56,5 +56,10 @@ class Worker extends Model
     public function unit(): BelongsTo
     {
       return $this->belongsTo(Unit::class, 'unit_id', 'id');
+    }
+
+    public function repair_devices(): HasMany
+    {
+      return $this->hasMany(RepairDevice::class);
     }
 }

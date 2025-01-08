@@ -32,6 +32,7 @@ return new class extends Migration
           ->constrained()
           ->cascadeOnUpdate()
           ->nullOnDelete();
+          $table->Integer('user_id')->unsigned()->default(0);
       });
     }
 
