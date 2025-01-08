@@ -51,9 +51,9 @@ class Device extends Model
     {
       return $this->belongsTo(DevType::class, 'dev_type_id', 'id');
     }
-
+    
     public function orders(): HasMany
     {
-       return $this->hasMany(Order::class);
+      return $this->hasMany(Order::class);
     }
 }

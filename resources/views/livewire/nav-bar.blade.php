@@ -171,24 +171,32 @@
               </span>
             </button>
           </li>
+          {{-- Cart 99+ --}}           
           <li>
-            <button type="button" class="btn btn-light rounded-pill position-relative">
+            <button type="button" class="btn btn-light rounded-pill position-relative"> 
+              {{-- id="package-open" data-bs-toggle="offcanvas_OFF" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart"> --}}
               <i class="bi bi-handbag"></i>
               <span class="position-absolute translate-middle badge rounded-pill bg-warning">
                 99+
                 <span class="visually-hidden">unread messages</span>
               </span>
+              {{-- додається через JS, коли Device додаємо в Пакет
+              <span class="badge text-bg-warning cart-badge bg-warning rounded-circle">55</span> --}}              
             </button>
+
+            {{-- ==================================================== --}}
+            {{-- @include('includes.offcanvas-cart') --}}
+            {{-- ==================================================== --}}                      
           </li>
 
-
+          {{-- ./Cart 99+ --}}
           <li class="dropdown">
             <a href="#" class="dropdown-toggle " data-bs-toggle="dropdown">
                 {{ auth()->user()->name }}
             </a>
-            <ul class="dropdown-menu dropdown-menu-end">
+          <ul class="dropdown-menu dropdown-menu-end">
 
-               <li class="dropdown-header">
+              <li class="dropdown-header">
               <h6>{{ auth()->user()->name }}</h6>
               <span>Посада</span>
             </li>
@@ -205,7 +213,7 @@
                     {{ __('Вихід') }}
                 </a>
             </li>
-            </ul>
+          </ul>
           </li>
         </ul>
 
