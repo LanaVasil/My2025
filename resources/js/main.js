@@ -39,14 +39,10 @@
             document.documentElement.clientHeight;
         let scrollValue = Math.round((pos * 100) / calcHeight);
 
-        const headerEl = document.getElementById("header")
-
         if (pos > 100) {
             scrollProgress.style.display = "grid";
-            headerEl.classList.add("header_mini")
         } else {
             scrollProgress.style.display = "none";
-            headerEl.classList.remove("header_mini")
         }
         scrollProgress.addEventListener("click", () => {
             document.documentElement.scrollTop = 0;

@@ -52,7 +52,7 @@
 
     </div>
 
-    @vite(['resources/js/app.js'])
+    @vite(['node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', 'resources/js/app.js'])
 
 </body>
 
