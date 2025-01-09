@@ -22,7 +22,11 @@ class UserController extends Controller
   // краще створити окремий контролер під адмінку
   public function home()
   {
-    return view('user.home', ['titlePage' => 'Головна'] );
+    // return view('user.home', ['titlePage' => 'Головна'] );
+    return view('home',[])
+    ->layoutData([
+          'titlePage'=>'Головна'])
+    ->layout('components.layouts.main');
   }
 
   public function create()
@@ -36,8 +40,8 @@ class UserController extends Controller
     $request->validate([
         'name' => 'required|string|min:3|max:255',
         'login' => 'required|string|unique:users|min:3|max:32',
-        'email' => 'required|string|email|unique:users|min:4|max:255',
-        'password' => 'required|min:3|max:100|confirmed',
+        'email' => 'required|string|email|unique:users|min:3|max:255',
+        'password' => 'required|min:3|confirmed',
     ]);
 
     try {
@@ -69,18 +73,18 @@ class UserController extends Controller
     // dump($request->boolean('remember'));
     // dd($request->all());
 
-    $credentials = $request->validate([
+    $validated = $request->validate([
       'login' => ['required'],
       'password' => ['required'],
     ]);
-  
 
-    if (Auth::attempt($credentials, $request->boolean('remember'))) {
-      // для користувача сесія: перестворення / утворення нової 
+
+    if (Auth::attempt($validated, $request->boolean('remember'))) {
+      // для користувача сесія: перестворення / утворення нової
       $request->session()->regenerate();
 
       // .', worker='.Auth::user()->worker.', role='.Auth::user()->role
-      if ( Auth::user()->is_admin || (Auth::user()->worker_id > 0 && Auth::user()->role_id > 0 ) ) { 
+      if ( Auth::user()->is_admin || (Auth::user()->worker_id > 0 && Auth::user()->role_id > 0 ) ) {
         flash( Auth::user()->name .' вітаємо у '.config('app.name') .'!','info');
       }else{
         flash( Auth::user()->name .' вітаємо! Зачекайте поки Адміністратор '.config('app.name') .' визначить коло Ваших прав.','info');
@@ -88,7 +92,7 @@ class UserController extends Controller
     // return redirect()->intended('home')->with(flash( Auth::user()->name . ' вітаємо у '.config('app.name') .'!','info'));
     return redirect()->intended('home');
   }
-  
+
     //   return back()->withErrors([
     //     'email' => 'The provided credentials do not match our records.',
     // ])->onlyInput('email');

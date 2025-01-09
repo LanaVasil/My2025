@@ -1,10 +1,12 @@
 <?php
 
 // role:
-// pro - customer[клієнт]
 // user
-// admin
+// author
+// editor
+// pro - customer[клієнт]
 // boss
+// admin
 
 use App\Http\Controllers\User\BrandsController;
 use Illuminate\Support\Facades\Route;
@@ -52,10 +54,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Route::get('/admin/device/add', DeviceAdd::class)->name('admin.device.add');
     Route::get('/admin/orders', OrderManagement::class)->name('admin.orders');
 
-    Route::get('/pro/devices', ProDevices::class)->name('pro.devices');    
-    Route::get('/pro/device/{id}', ProDeviceShow::class)->name('pro.device.show');   
-   
-    
+    Route::get('/pro/devices', ProDevices::class)->name('pro.devices');
+    Route::get('/pro/device/{id}', ProDeviceShow::class)->name('pro.device.show');
+
+
 });
 
 

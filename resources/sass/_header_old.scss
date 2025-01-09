@@ -1,27 +1,43 @@
 /* ==================Header==================== */
+.logo {
+    line-height: 1;
+    text-decoration: none;
+}
 
-.top-line {
-    /* font-family: 'BebasNeueProExp ', sans-serif; */
-    background-color: var(--bs-gray-700);
-    color: var(--bs-warning);
-    // font-weight: 500;
-    padding: 0.25rem 0;
+.logo img {
+    max-height: 1.8rem;
+    margin-right: 6px;
 }
-.top-line__logo {
-    width: 1.5em;
-    height: 1.5em;
-    /* margin-right: .8rem; */
+
+.logo span {
+    font-family: var(--font-title);
+    font-size: 1.2em;
+    font-weight: 500;
+
+    color: var(--accent-color);
 }
+
+.card-entry {
+    border-radius: 0.5em;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+}
+
+// .card-entry .card-body {
+//     margin: 0 1.2em;
+// }
+/* ==================/ Header==================== */
+
+/* ==================Header==================== */
 
 .top-navbar {
-    background-color: var(--bs-light);
+    background-color: var(--navbar-bg-color);
     box-shadow: inset 0 -1px 0 #c4cdd5;
     // /* border-bottom: 1px solid #c4cdd5;
 }
 
 .top-navbar a {
-    color: var(--bs-dark);
-    font-family: var(--font-family-accent);
+    color: var(--text-color);
+    font-family: var(--font-accent);
     font-size: 1.1rem;
     font-weight: 300;
 }
@@ -30,7 +46,7 @@
     content: "";
     width: 100%;
     display: block;
-    border-top: 2px solid var(--bs-warning);
+    border-top: 2px solid var(--accent-color);
     transform: scale(0);
     transition: all 0.3s;
 }
@@ -42,19 +58,8 @@
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
 }
 
-.header-logo {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: var(--bs-warning);
-    transition: all 0.3s;
-}
-
-.header-logo:hover {
-    color: var(--contrast-color);
-}
-
 .top-navbar {
-    border-top: 3px solid var(--bs-warning);
+    // border-top: 3px solid var(--accent-color);
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -69,8 +74,7 @@
 
 // головне меню
 .nav-item .nav-link {
-    // text-transform: uppercase;
-    font-family: var(--font-family-accent);
+    font-family: var(--font-accent);
 }
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.show {
@@ -100,12 +104,11 @@
 }
 .navbar-side > ul > li > a:hover,
 .navbar-side > ul > li > a:hover i {
-    color: var(--bs-warning);
+    color: var(--accent-color);
 }
 .navbar-side .dropdown-item:hover {
-    color: var(--bg-color);
-    background-color: var(--bs-gray-600);
-    font-weight: 400;
+    color: var(--navbar-bg-color);
+    background-color: var(--text-color);
 }
 
 /* .search-form розкривається пошук по route*/
@@ -114,7 +117,7 @@
     right: 0;
     top: 0;
     width: 0;
-    z-index: 2;
+    z-index: 1000;
 }
 .search-form .form-control {
     position: absolute;
@@ -145,7 +148,7 @@
 /* велике меню */
 .top-navbar .dropdown-menu {
     box-shadow: 0 4px 18px -2px rgba(0, 0, 0, 0.1);
-    background-color: var(--bs-light);
+    background-color: var(--navbar-bg-color);
 }
 
 .megamenu {
@@ -156,7 +159,7 @@
 .megamenu .title {
     font-size: 1.2rem;
     line-height: 1rem;
-    font-family: var(--font-family-accent);
+    font-family: var(--font-accent);
     font-weight: 300;
     color: var(--bs-gray-900);
     border-bottom: 1px solid var(--bs-gray-900);
@@ -168,15 +171,15 @@
 
 .megamenu a {
     color: var(--bs-gray-700);
-    font-family: var(--font-family-accent);
+    font-family: var(--font-accent);
     font-size: 1rem;
     text-decoration: none;
     transition: all 0.3s;
 }
 .megamenu a:hover {
-    color: var(--bs-warning);
+    color: var(--accent-color);
     // text-decoration: underline;
-    border-bottom: 1px solid var(--bs-warning);
+    border-bottom: 1px solid var(--accent-color);
 }
 
 /* прибираємо обводку у бургері */

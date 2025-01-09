@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * role 1-user, 2-autor, 3-editor, 5-admin
      */
     public function up(): void
     {
@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('login', 32)->unique();
             $table->foreignId('is_admin')->default(0);
             $table->string('worker_id')->default(0);
-            $table->string('role_id')->default(0);
+            $table->unsignedTinyInteger('role_id')->default(1);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

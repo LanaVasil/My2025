@@ -14,10 +14,12 @@ class RoleSeeder extends Seeder
     public function run(): void
     {
     $data = [
-      ['name' => 'admin'],
-      ['name' => 'user'],
-      ['name' => 'boss'],
-      ['name' => 'pro'],
+      ['id'=>'1', 'name' => 'user'],
+      ['id'=>'2', 'name' => 'boss'],
+      ['id'=>'3', 'name' => 'author'],
+      ['id'=>'4', 'name' => 'editor'],
+      ['id'=>'5', 'name' => 'pro'],
+      ['id'=>'8', 'name' => 'admin'],
     ];
 
     foreach ($data as $row) {

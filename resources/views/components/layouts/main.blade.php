@@ -33,9 +33,15 @@
 
         <!-- ======= Main ======= -->
         <main id="main" class="main">
+            <div class="main__container">
+              @include('includes.breadcrumbs')
+            
+              <!-- Флеш повідомлення (показати і після цього видалили з сесії). Відображення повідомлення про вдалу Add / Edit / Delete -->
+              @include('includes.flash')
 
-          {{ $slot }}
-          
+              {{ $slot }}
+
+            </div>
         </main><!-- End #main -->
         <!-- ======= ./Main ======= -->
 
