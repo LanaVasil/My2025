@@ -18,3 +18,8 @@ class DeviceSeeder extends Seeder
     Device::factory(100)->create();
   }
 }
+
+// HP 125A
+// PN-125AYR (CB542A) жовтий
+// HP 59X (CF259X)
+// HP 59A (CF259X)

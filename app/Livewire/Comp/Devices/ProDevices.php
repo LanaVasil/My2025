@@ -35,7 +35,7 @@ class ProDevices extends Component
       session()->put('cart', $cart);
 
       // Флеш повідомлення
-      flash( " {$device->dev_type->name} :: {$device->brand->name} :: {$device->name} додано до пакування.");
+      flash( "{$device->dev_type->name} :: {$device->brand->name} :: {$device->name} додано до пакування.");
       // flash("{$device->name} покладено у пакет");      
     }
 

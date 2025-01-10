@@ -1,7 +1,8 @@
 // z-index - перелік
-// #progress / z-index: 1000;
-// #header / z-index: 999;
-
+// .offcanvas.showing / z-index: 1200;
+// .search-form       / z-index: 1100; пошук по сайту/по роутам
+// #progress          / z-index: 1000;
+// #header            / z-index: 999;
 
 html,
 body {
@@ -155,6 +156,15 @@ a {
     font-family: var(--font-title);
     font-style: italic;
     color: var(--accent-color);
+}
+  // текст пишеться в одну строку, решта заміняється ...
+.card-oneline {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    // text-decoration: none;
+    transition: all .3s;
 }
 
 /* --------------- */

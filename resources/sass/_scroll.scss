@@ -3,6 +3,7 @@
     position: fixed;
     bottom: 20px;
     right: 10px;
+    // роблять 70px
     height: 60px;
     width: 60px;
     display: none;
@@ -10,6 +11,8 @@
     border-radius: 50%;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    transition: all .5s;
+    z-index: 1000;
 }
 #progress-value {
     display: block;

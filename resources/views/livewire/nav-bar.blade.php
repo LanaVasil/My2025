@@ -84,7 +84,7 @@
                                               {{ __('Orders') }}
                                           </a>
                                       </li>
-                  
+
                                     </ul>
                                   </div>
                                   <!-- end col-3 -->
@@ -124,13 +124,13 @@
                       <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
                         105
                         <span class="visually-hidden">unread messages</span>
-                      </span>                      
+                      </span>
                     </button>
                   </li>
                   <li>
-                    {{-- Cart 99+ --}}
-                    <button type="button" class="btn btn-light rounded-pill position-relative" 
-                      id="package-open" data-bs-toggle="offcanvas_OFF" data-bs-target="#offcanvasCart" 
+                    {{-- Cart 99+ offcanvas_OFF data-bs-toggle="offcanvas" прибираємо. Будемо показувати засобами JS --}}
+                    <button type="button" class="btn btn-light rounded-pill position-relative"
+                      id="cart-open" data-bs-target="#offcanvasCart"
                       aria-controls="offcanvasCart">
                       <i class="bi bi-handbag"></i>
                       <span class="position-absolute translate-middle badge rounded-pill bg-warning">
@@ -138,12 +138,12 @@
                         <span class="visually-hidden">unread messages</span>
                       </span>
                       {{-- додається через JS, коли Device додаємо в Пакет
-                      <span class="badge text-bg-warning cart-badge bg-warning rounded-circle">55</span> --}}              
+                      <span class="badge text-bg-warning cart-badge bg-warning rounded-circle">55</span> --}}
                     </button>
-                    {{-- ./Cart 55 --}}
+                    {{-- ./Cart 99+ --}}
                   </li>
 
-                  
+
                   <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">{{ auth()->user()->name }}</a>
                       <ul class="dropdown-menu dropdown-menu-end animate slideIn">
@@ -170,13 +170,15 @@
 
               <form action="" class="search-form">
                 <input
-                  class="form-control"
-                  type="text"
-                  name="s"
-                  placeholder="Пошук ..."
-                  required
+                    type="text"
+                    class="form-control"
+                    type="text"
+                    name="s"
+                    placeholder="Пошук ..."
+                    title=""
+                    required
                 />
-                <button class="search-form-btn"  id="search-form-btn" type="submit">
+                <button class="search-form-btn" id="search-form-btn" type="submit">
                   <i class="bi bi-search"></i>
                 </button>
               </form>
@@ -185,5 +187,7 @@
 
       </div>
   </nav>
+
+  @include('includes.offcanvas-cart')
 
 </header>
