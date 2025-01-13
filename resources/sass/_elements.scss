@@ -173,6 +173,15 @@ a {
     transition: all 0.3s;
 }
 
+.article{
+  background-color: var(--navbar-bg-color);
+  border-radius: .5rem;
+}
+// .article:hover{ не працює
+//   border: var(--accent-color);
+//   box-shadow: #373737;
+// }
+
 // із одної кнопки розгортання в вертикальну смугу
 .img-with-btns {
     --i-width: 42px;

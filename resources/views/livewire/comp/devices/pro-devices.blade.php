@@ -18,12 +18,27 @@
       {{-- Right - Tables --}}
       <div class="col-lg-10 col-md-9">
 
+          <div class="row">
+              <!-- Кнопка-триггер модальне вікно staticArticle -->
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticArticle">
+                Додати
+              </button>
+              <!-- Модальне вікно staticArticle-->
+              {{-- <livewire:comp.devices.pro-device-add/> --}}
+              <livewire:comp.devices.pro-device-add/>
+          </div>
+
+
+
+
         <div class="row">
           @foreach ($rows as $row)
-            <article data-pid="{{ $row->id }}" class="card article p-2 me-2 mb-2 align-self-stretch"
+            <article data-pid="{{ $row->id }}" class="article p-2 me-2 mb-2 align-self-stretch"
               style="width: 18rem;">
                 <div class="img-with-btns">
-                    <img src="{{ asset('storage/' .$row->img) ? asset('storage/img/empty.jpg') : asset('storage/' .$row->img) }}" alt="Photo {{ $row->id}}">
+                    <img src="{{ asset('storage/' .$row->img) 
+                      ? asset('storage/img/empty.jpg') : asset('storage/' .$row->img) }}" 
+                      alt="Photo {{ $row->id}}">
 
                     <div class="img-with-btns__btn-plus">
                         <i class="bi bi-grip-horizontal"></i>
@@ -33,8 +48,15 @@
                         <i class="bi bi-trash3"></i>
                     </button>
 
-                    <button href="#" class="img-with-btns__btn-group rounded-pill" title="Редагувати">
+                    {{-- <button href="#" class="img-with-btns__btn-group rounded-pill" title="Редагувати">
                         <i class="bi bi-pencil"></i>
+                    </button> --}}
+                    {{-- Редагувати --}}
+                    <button @click="$dispatch('edit-mode',{id:{{$row->id}}})" 
+                      type="button" 
+                      class="img-with-btns__btn-group rounded-pill" 
+                      data-bs-toggle="modal" data-bs-target="#staticArticle">
+                      <i class="bi bi-pencil"></i>
                     </button>
 
                     <button wire:click="addToCart({{ $row->id }})"
@@ -42,7 +64,7 @@
                         <i class="bi bi-handbag"></i>
                     </button>
                 </div>
-              {{-- <div class="card-body"> --}}
+
               <a href="{{ route('pro.device.show', $row->id) }}" class="article__link" title="Огляд">
                   <div class="text-center opacity-75">{{ $row->dev_type->name }}</div>
                   <div class="text-center opacity-75">{{ $row->brand->name }}</div>
@@ -50,7 +72,7 @@
                   <small class="text-center text-oneline">{{ $row->note }}</small>
               </a>
 
-            {{-- </div> --}}
+
             </article>
           @endforeach
         </div>
@@ -59,3 +81,6 @@
     </div>
 
 </div>
+
+
+
