@@ -175,7 +175,7 @@
 }
 .megamenu a:hover {
     color: var(--accent-color);
-    // text-decoration: underline;
+    text-decoration: none;
     border-bottom: 1px solid var(--accent-color);
 }
 
@@ -190,41 +190,67 @@
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2822, 28, 36, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* .search-form розкривається пошук по route*/
-.search-form {
+/* .search-bar розкривається пошук по route*/
+.search-bar {
     position: absolute;
-    right: 0;
-    width: 100%;
+    right: -10px;
+    top: -7px;
     z-index: 1100;
+    --size: 50px;
+    --padding: 5px;
+
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--navbar-bg-color);
+    // box-shadow: 0 10px 10px 0 #d6d9e2;
+    border-radius: 100px;
+    outline: 1px solid transparent;
+    overflow: hidden;
+
+    padding: var(--padding);
+    margin-inline: auto;
+    width: var(--size);
+    height: var(--size);
+    max-width: 100%;
+    transition: width 0.5s, outline 0.5s;
 }
-.search-form .form-control {
-    position: absolute;
-    right: 0;
-    border-radius: 2.2rem;
-    width: 0;
+
+.search-bar:focus-within {
+    width: 100%;
+    outline: 1px solid var(--accent-color);
+    box-shadow: 0 10px 10px 0 #d6d9e2;
+}
+
+.search-input {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-inline: 1rem;
+    flex: auto;
+
     opacity: 0;
-    transition: all 0.3s;
+    transition: opacity 0.5s;
 }
-.search-form .form-control .show {
-    position: absolute;
-    width: 100%;
+
+.search-bar:focus-within .search-input {
     opacity: 1;
 }
-.search-form button {
-    position: absolute;
-    right: 0;
-    top: 1;
-    background-color: var(--bs-gray-500);
+
+.search-submit {
+    flex: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
     color: var(--navbar-bg-color);
-    border: 0;
+    background-color: var(--bs-gray-500);
     border-radius: 50%;
-    width: 2.3rem;
-    height: 2.3rem;
-}
-/* /.search-form */
-.search-form .form-control.show {
-    width: 100%;
-    opacity: 1;
+    border: none;
+    width: calc(var(--size) - var(--padding) - var(--padding));
+    aspect-ratio: 1;
+    cursor: pointer;
 }
 
 // Беру <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
@@ -232,5 +258,14 @@
 .btn .badge {
     top: 0.44em !important;
     // left: 80px;
+}
+
+// Offcanvas-Пакет: кладемо device
+// анімація польта клона image
+._flyImage ._ibg {
+    opacity: 1;
+    position: fixed;
+    z-index: 1300;
+    transition: all 1s ease 0s;
 }
 /* ==================Header==================== */

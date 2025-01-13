@@ -5,7 +5,7 @@
     <!-- Флеш повідомлення (показати і після цього видалили з сесії). Відображення повідомлення про вдалу Add / Edit / Delete -->
     @include('includes.flash')
 
-    
+
     <div class="card offset-lg-4 offset-sm-3 col-xxl-3 col-lg-4 col-sm-6 col-12">
 
     <div class="card-header">

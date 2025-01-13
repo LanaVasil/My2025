@@ -1,4 +1,5 @@
 // z-index - перелік
+// ._flyImage ._ibg   / z-index: 1300;
 // .offcanvas.showing / z-index: 1200;
 // .search-form       / z-index: 1100; пошук по сайту/по роутам
 // #progress          / z-index: 1000;
@@ -43,6 +44,10 @@ main.main {
 img {
     max-width: 100%;
     height: auto;
+
+    // додала недщодавно
+    display: block;
+    object-fit: cover;
 }
 
 // червона зірочка - позначка що поле обов'язкове до заповнення
@@ -157,15 +162,148 @@ a {
     font-style: italic;
     color: var(--accent-color);
 }
-  // текст пишеться в одну строку, решта заміняється ...
-.card-oneline {
+
+// текст пишеться в один рядок, решта замінюється на ...
+.text-oneline {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     // text-decoration: none;
-    transition: all .3s;
+    transition: all 0.3s;
 }
+
+// із одної кнопки розгортання в вертикальну смугу
+.img-with-btns {
+    --i-width: 42px;
+    --i-offset-left: 16px;
+    --i-offset-bottom: 16px;
+
+    position: relative;
+    /*
+    width = 100
+    height = 100 * 1.25 = 125
+  */
+    aspect-ratio: 1 / 1.25;
+}
+
+// .img-with-btns img {
+//     width: 100%;
+//     height: 100%;
+//     display: block;
+//     object-fit: cover;
+// }
+
+.img-with-btns__btn-plus,
+.img-with-btns__btn-group {
+    position: absolute;
+    left: var(--i-offset-left);
+    bottom: var(--i-offset-bottom);
+    width: var(--i-width);
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--bs-gray-500);
+    background-color: var(--navbar-bg-color);
+    font-size: 1.25rem;
+    border-radius: 50%;
+    border: none;
+}
+
+.img-with-btns__btn-plus {
+    z-index: 1;
+    font-size: 1.25rem;
+    color: var(--bs-gray-500);
+    background-color: var(--navbar-bg-color);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.img-with-btns .img-with-btns__btn-group {
+    transition: 0.3s ease-in-out;
+}
+
+.img-with-btns:hover .img-with-btns__btn-plus,
+.img-with-btns:focus-within .img-with-btns__btn-plus,
+.img-with-btns .img-with-btns__btn-group:hover,
+.img-with-btns .img-with-btns__btn-group:focus-visible {
+    color: var(--text-color);
+    background-color: var(--accent-color);
+}
+
+.img-with-btns .img-with-btns__btn-group:focus-visible {
+    outline: 1px solid;
+    outline-offset: -4px;
+}
+
+.img-with-btns .img-with-btns__btn-plus i {
+    transition: 0.3s ease-in-out;
+}
+
+.img-with-btns:hover .img-with-btns__btn-plus i,
+.img-with-btns:focus-within .img-with-btns__btn-plus i {
+    rotate: 270deg;
+}
+
+.img-with-btns:hover button:nth-of-type(1),
+.img-with-btns:focus-within button:nth-of-type(1) {
+    /* (42 + 8) * 1 + 16 = 66 */
+    bottom: calc((var(--i-width) + 8px) * 1 + var(--i-offset-bottom));
+}
+
+.img-with-btns:hover button:nth-of-type(2),
+.img-with-btns:focus-within button:nth-of-type(2) {
+    /* (42 + 8) * 2 + 16 = 116 */
+    bottom: calc((var(--i-width) + 8px) * 2 + var(--i-offset-bottom));
+}
+
+.img-with-btns:hover button:nth-of-type(3),
+.img-with-btns:focus-within button:nth-of-type(3) {
+    /* (42 + 8) * 3 + 16 = 166 */
+    bottom: calc((var(--i-width) + 8px) * 3 + var(--i-offset-bottom));
+}
+// ./із одної кнопки розгортання в вертикальну смугу
+
+// при наведенні на кнопку виділення по колу
+.iimg-with-btns__btn-group {
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    aspect-ratio: 1;
+    font-size: 1.5rem;
+    color: #7a7a7a;
+    background-color: #373737;
+    border-radius: 50%;
+    transition: color 0.5s ease-in-out;
+}
+@property --fill {
+    syntax: "<percentage>";
+    inherits: true;
+    initial-value: 0%;
+}
+
+.iimg-with-btns__btn-group:hover {
+    color: greenyellow;
+    --fill: 100%;
+}
+
+.iimg-with-btns__btn-group::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    inset: -3px;
+    border-radius: inherit;
+
+    background: conic-gradient(
+        greenyellow var(--fill),
+        transparent var(--fill)
+    );
+    transition: --fill 0.6s ease-in-out;
+}
+// ./із одної кнопки розгортання в вертикальну смугу
 
 /* --------------- */
 [class*="__container"] {

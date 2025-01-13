@@ -12,7 +12,7 @@
     <link href="{{ asset('storage/img/favicon.svg')}}" rel="shortcut icon" type="image/x-icon">
 
     @vite(['resources/sass/app.scss'])
-    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}    
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 </head>
 
 <body>
@@ -33,15 +33,7 @@
 
         <!-- ======= Main ======= -->
         <main id="main" class="main">
-            <div class="main__container">
-              @include('includes.breadcrumbs')
-            
-              <!-- Флеш повідомлення (показати і після цього видалили з сесії). Відображення повідомлення про вдалу Add / Edit / Delete -->
-              @include('includes.flash')
-
               {{ $slot }}
-
-            </div>
         </main><!-- End #main -->
         <!-- ======= ./Main ======= -->
 

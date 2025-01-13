@@ -64,11 +64,11 @@
                                               {{ __('Види пристроїв') }}
                                           </a>
                                       </li> --}}
-                                      {{-- <li>
+                                      <li>
                                           <a wire:navigate href="{{ route('admin.brands') }}">
                                               {{ __('Довідник брендів') }}
                                           </a>
-                                      </li> --}}
+                                      </li>
                                       {{-- <li>
                                           <a wire:navigate href="{{ route('admin.device.add') }}">
                                               {{ __('Довідник пристроїв add') }}
@@ -76,7 +76,12 @@
                                       </li> --}}
                                       <li>
                                         <a wire:navigate href="{{ route('pro.devices') }}">
-                                            {{ __('Довідник пристроїв пакування') }}
+                                            {{ __('Довідник пристроїв. Пакування') }}
+                                        </a>
+                                      </li>
+                                      <li>
+                                        <a wire:navigate href="{{ route('pro.cart') }}">
+                                            {{ __('Кошик запакувати') }}
                                         </a>
                                       </li>
                                       <li>
@@ -129,7 +134,7 @@
                   </li>
                   <li>
                     {{-- Cart 99+ offcanvas_OFF data-bs-toggle="offcanvas" прибираємо. Будемо показувати засобами JS --}}
-                    <button type="button" class="btn btn-light rounded-pill position-relative"
+                    <button type="button" class="cart-header__icon btn btn-light rounded-pill position-relative"
                       id="cart-open" data-bs-target="#offcanvasCart"
                       aria-controls="offcanvasCart">
                       <i class="bi bi-handbag"></i>
@@ -168,20 +173,12 @@
                   </li>
               </ul>
 
-              <form action="" class="search-form">
-                <input
-                    type="text"
-                    class="form-control"
-                    type="text"
-                    name="s"
-                    placeholder="Пошук ..."
-                    title=""
-                    required
-                />
-                <button class="search-form-btn" id="search-form-btn" type="submit">
-                  <i class="bi bi-search"></i>
+            <form action="" class="search-bar">
+                <input type="search" class="search-input" placeholder="Шукати..." tabindex="0">
+                <button class="search-submit" tabindex="0" type="submit">
+                <i class="bi bi-search"></i>
                 </button>
-              </form>
+            </form>
 
           </div><!-- ./navbar-side -->
 

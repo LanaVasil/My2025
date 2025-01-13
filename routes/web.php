@@ -4,11 +4,12 @@
 // user
 // author
 // editor
-// pro - customer[клієнт]
+// pro -
+// customer[клієнт]
 // boss
 // admin
 
-use App\Http\Controllers\User\BrandsController;
+// use App\Http\Controllers\User\BrandsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -21,9 +22,14 @@ use App\Livewire\Devices\DeviceEdit;
 // Admin
 use App\Livewire\AdminOverview;
 
-// PRO
+// Comp
+use App\Livewire\Comp\Brands\AdminBrands;
+
 use App\Livewire\Comp\Devices\ProDevices;
 use App\Livewire\Comp\Devices\ProDeviceShow;
+use App\Livewire\Comp\Devices\ProDeviceAdd;
+use App\Livewire\Comp\Devices\ProDeviceEdit;
+use App\Livewire\Comp\Devices\ProCart;
 
 use App\Livewire\Admin\Comp\Brands;
 use App\Livewire\Admin\Comp\DeviceAdd;
@@ -54,9 +60,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Route::get('/admin/device/add', DeviceAdd::class)->name('admin.device.add');
     Route::get('/admin/orders', OrderManagement::class)->name('admin.orders');
 
+    Route::get('/admin/brands', AdminBrands::class)->name('admin.brands');
+
     Route::get('/pro/devices', ProDevices::class)->name('pro.devices');
     Route::get('/pro/device/{id}', ProDeviceShow::class)->name('pro.device.show');
-
+    Route::get('/pro/device/add', ProDeviceAdd::class)->name('pro.device.add');
+    Route::get('/pro/device/edit/{id}', ProDeviceEdit::class)->name('pro.device.edit');
+    Route::get('/pro/cart', ProCart::class)->name('pro.cart');
 
 });
 

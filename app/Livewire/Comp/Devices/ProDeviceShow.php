@@ -15,16 +15,16 @@ class ProDeviceShow extends Component
     public function mount($id){
         $this->device = Device::findOrFail($id);
     }
-  
+
     public function addToCart($deviceId){
 
       $device = Device::find($deviceId);
-    
+
       if(!$device){
           // Флеш повідомлення
           flash('Не знайдено.');
           return;
-      }      
+      }
 
       $cart = session()->get('cart',[]);
 
@@ -33,14 +33,17 @@ class ProDeviceShow extends Component
       }else{
           $cart[$deviceId] = [
               'name'=> $device->name,
-              'brand_id'=> $device->brand_id,
+              'dev_type'=> $device->dev_type->name,
+              'brand'=> $device->brand->name,
               'quantity'=> 1,
           ];
       }
 
-      session()->put('cart',$cart);
+      session()->put('cart', $cart);
+
       // Флеш повідомлення
-      flash("{$device->name} покладено у пакет");      
+      flash( "{$device->dev_type->name} :: {$device->brand->name} :: {$device->name} додано до пакування.");
+      // flash("{$device->name} покладено у пакет");
     }
 
     public function render()

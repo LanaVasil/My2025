@@ -1,3 +1,10 @@
+<div class="main__container">
+    {{-- Breadcrumbs / хлібні крихти, назва сторинки  --}}
+    @include('includes.breadcrumbs')
+
+    <!-- Флеш повідомлення (показати і після цього видалили з сесії). Відображення повідомлення про вдалу Add / Edit / Delete -->
+    @include('includes.flash')
+
     <div class="row">
       {{-- Left - Sidebar Filters --}}
       <div class="col-lg-2 col-md-3">
@@ -10,29 +17,45 @@
 
       {{-- Right - Tables --}}
       <div class="col-lg-10 col-md-9">
-      
+
         <div class="row">
           @foreach ($rows as $row)
-            <article data-pid="{{ $row->id }}" class="card p-2 me-2 mb-2 align-self-stretch"
+            <article data-pid="{{ $row->id }}" class="card article p-2 me-2 mb-2 align-self-stretch"
               style="width: 18rem;">
+                <div class="img-with-btns">
+                    <img src="{{ asset('storage/' .$row->img) ? asset('storage/img/empty.jpg') : asset('storage/' .$row->img) }}" alt="Photo {{ $row->id}}">
 
-                <img src="{{ asset('storage/' .$row->img) ? asset('storage/img/empty.jpg') : asset('storage/' .$row->img) }}" alt="Photo {{ $row->id}}">
-            
-                <button wire:click="addToCart({{ $row->id }})" class="position-absolute top-50 start-50 btn btn-light rounded-pill" title='Додати до пакування'><i class="bi bi-handbag"></i></button>
+                    <div class="img-with-btns__btn-plus">
+                        <i class="bi bi-grip-horizontal"></i>
+                    </div>
 
+                    <button href="#" class="img-with-btns__btn-group" title="Видалити">
+                        <i class="bi bi-trash3"></i>
+                    </button>
+
+                    <button href="#" class="img-with-btns__btn-group rounded-pill" title="Редагувати">
+                        <i class="bi bi-pencil"></i>
+                    </button>
+
+                    <button wire:click="addToCart({{ $row->id }})"
+                        class="img-with-btns__btn-group rounded-pill" title="Додати до пакування">
+                        <i class="bi bi-handbag"></i>
+                    </button>
+                </div>
               {{-- <div class="card-body"> --}}
-              <a href="{{ route('pro.device.show', $row->id) }}" class="card-body">  
-                  <div class="opacity-75">{{ $row->dev_type->name }}</div>
-                  <div  class="opacity-75">{{ $row->brand->name }}</div>
-                  <h5 class="card-oneline">{{ $row->name }}</h5>
-                  <small class="card-oneline">{{ $row->note }}</small>
+              <a href="{{ route('pro.device.show', $row->id) }}" class="article__link" title="Огляд">
+                  <div class="text-center opacity-75">{{ $row->dev_type->name }}</div>
+                  <div class="text-center opacity-75">{{ $row->brand->name }}</div>
+                  <h5 class="text-center text-oneline">{{ $row->name }}</h5>
+                  <small class="text-center text-oneline">{{ $row->note }}</small>
               </a>
 
             {{-- </div> --}}
             </article>
           @endforeach
         </div>
-        
+
       </div>
     </div>
 
+</div>
