@@ -13,6 +13,11 @@
 
     @vite(['resources/sass/app.scss'])
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
+    <style>
+      tr td {
+        vertical-align: middle;
+      }
+    </style>
 </head>
 
 <body>

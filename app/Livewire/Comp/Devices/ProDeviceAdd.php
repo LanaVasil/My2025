@@ -4,11 +4,12 @@ namespace App\Livewire\Comp\Devices;
 
 use Livewire\Component;
 use Livewire\Attributes\Rule;
+use Livewire\Attributes\Validate;
 use Livewire\Attributes\On;
+use Livewire\WithFileUploads;
 use App\Models\Brand;
 use App\Models\DevType;
 use App\Models\Device;
-use Livewire\WithFileUploads;
 
 use Barryvdh\Debugbar\Facades\Debugbar;
 
@@ -31,36 +32,57 @@ class ProDeviceAdd extends Component
   // ];
 
     // public $name, $note, $status, $img, $dev_type_id , $brand_id;
-    #[Rule('required|string|unique:devices|min:2|max:255')]
+    public $note, $status;
+
+    // #[Rule('required|string|unique:devices|min:2|max:255')]
+    #[Validate('required')]
     public $name;
 
-    #[Rule('image|max:2048')]
+    // #[Rule('image|max:2048')]
+    // #[Validate('image', message: 'Тільки зображення')]
+    // #[Validate('mimes:jpg,png,webp', message: 'Тільки jpg,png,webp')]
+    // #[Validate('max:2048')]
+    // #[Validate('mimes:jpg,jpeg,png,webp|file|size:2048|nullable')]
+    #[Validate('mimes:jpg,jpeg,png,webp|file|max:2048|nullable')]
     public $img;
 
 
-    #[Rule('required')]
+    // #[Validate('required')]
+    // #[Validate('required')]
     public $dev_type_id;
 
-    #[Rule('required')]
+    // #[Rule('required')]
+    // #[Rule('required')]
     public $brand_id;
-
-    public $note, $status;
 
     #[On('edit-mode')]
     public function edit($id){
         // dd($id);
         $this->editForm=true;
         $this->titleForm = 'Редагувати';
-        $this->item = Device::findOrFail($id);
+        // $this->item = Device::findOrFail($id);
 
-        $this->itemId = $this->item->id;
-        $this->name = $this->item->name;
-        $this->note = $this->item->note;
+        // $this->itemId = $this->item->id;
+        // $this->name = $this->item->name;
+        // $this->note = $this->item->note;
 
 
+        // // $this->img = $this->item->img;
+        // $this->dev_type_id = $this->item->dev_type_id;
+        // $this->brand_id = $this->item->brand_id;
+
+        $row = Device::findOrFail($id);
+
+        $this->itemId = $row->id;
+        $this->name = $row->name;
+        $this->note = $row->note;
+
+        // $p = $row->img;
+        // @if($avatar){{$avatar ? $avatar->temporaryUrl() : asset('storage/'.auth()->user()->avatar)}}@endif
         // $this->img = $this->item->img;
-        $this->dev_type_id = $this->item->dev_type_id;
-        $this->brand_id = $this->item->brand_id;
+
+        $this->dev_type_id = $row->dev_type_id;
+        $this->brand_id = $row->brand_id;
     }
 
     public function update(){
@@ -76,39 +98,37 @@ class ProDeviceAdd extends Component
     }
 
     public function save(){
-      $validated = $this->validate();
 
-      // dd(1);
+      $this->validate();
 
-    //   $img =$this->img->store(path: 'devices');
+      $imagePath = null;
 
-      // $this->validate([
-      //   'name'=> 'required|string|unique:devices|min:2|max:255',
-      //   'img' => 'image|max:2048', // 2MB Max
-      // ]);
+      if ($this->img){
+        $imageName = time().'.'.$this->img->extension();
+        $imagePath = $this->img->storeAs('public/devices', $imageName);
+      }
 
+    $device = Device::create([
+        'name'=> $this->name,
+        'note'=> $this->note,
+        // 'status'=> $this->status,
+        'img'=> $imagePath,
+        'dev_type_id'=> $this->dev_type_id,
+        'brand_id'=> $this->brand_id,
+    ]);
 
-    //   $path =$this->img->store(path: 'devices');
+    // Флеш повідомлення
+    if ($device) {
+      // flash('Запис додано.');
+      return redirect('/pro/devices')->with(flash('Запис додано.'));
+    }else{
+      // flash('Запис додати не вдалось.','danger');      
+      return redirect('/pro/devices')->with(flash('Запис додати не вдалось.','danger'));
+    }
 
-    // Device::create([
-    //     'name'=> $this->name,
-    //     'note'=> $this->note,
-    //     // 'status'=> $this->status,
-    //     'img'=> $path,
-    //     'dev_type_id'=> $this->dev_type_id,
-    //     'brand_id'=> $this->brand_id,
-    // ]);
-
-        Device::create($validated);
-        // Флеш повідомлення
-        flash('Запис додано.');
-
-
-
-        $this->reset();
-
-        return redirect()->to('/pro/devices')
-             ->with('Запис додано.');
+    // $this->reset();
+    // return redirect('/pro/devices');
+  
     }
 
     public function close(){

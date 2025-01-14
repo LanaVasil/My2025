@@ -33,7 +33,7 @@
 
         <div class="row">
           @foreach ($rows as $row)
-            <article data-pid="{{ $row->id }}" class="article p-2 me-2 mb-2 align-self-stretch"
+            <article data-pid="{{ $row->id }}" class="shadow article p-2 me-2 mb-2 align-self-stretch"
               style="width: 18rem;">
                 <div class="img-with-btns">
                     <img src="{{ asset('storage/' .$row->img) 
