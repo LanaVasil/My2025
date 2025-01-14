@@ -1,0 +1,19 @@
+.offcanvasPackage-table {
+  text-decoration: none;
+  // якщо цього нема то стеємо мишкою на посилання і змінюється курсор, тобто губиться посилання
+  display: block;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.offcanvas.showing, .offcanvas.hiding, .offcanvas.show {
+  z-index: 1200;
+}
+
+.offcanvasCart-table a:hover {
+  text-decoration: underline;
+  color: var(--accent-color);
+
+}
